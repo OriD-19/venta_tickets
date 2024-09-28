@@ -1,0 +1,237 @@
+:root {
+    --primary: blueviolet;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{ font-size: 3.5em;}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em;}
+ul{ list-style: none;}
+li{ font-size: 1.25em;}
+
+.color-acento {
+    color: var(--primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.button {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary);
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px auto;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: rgba(101, 33, 165, 1);
+}
+
+header {
+    background-color: rgb(245, 245, 245);
+}
+
+header .logo {
+    padding: 25px 30px;
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.6em;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+header .container nav a {
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+header .container nav a:hover {
+    color: var(--primary);
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 90vh;
+    background-image: url('../img/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
+
+#hero h1, #hero a {
+    position: relative;
+    z-index: 2;
+}
+
+#hero::before {
+    height: inherit;
+    width: 100%;
+    content: "";
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+}
+
+#hero h1 {
+    color: white;
+}
+
+#somos .container {
+    text-align: center;
+    padding: 100px 12px;
+}
+
+#somos .container p {
+    text-align: justify;
+}
+
+#nuestros-programas {
+    background: rgb(30, 30, 30);
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+}
+
+#nuestros-programas .container {
+    padding: 50px 12px;
+}
+
+#nuestros-programas .card {
+    padding: 50px 0;
+    margin: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#nuestros-programas .card:nth-child(1) {
+    background-image: linear-gradient(to left, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.6)), url('../img/front-end.jpg');
+}
+
+#nuestros-programas .card:nth-child(2) {
+    background-image: linear-gradient(to left, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.6)), url('../img/full-stack.jpg');
+    background-position: 60% 30%;
+}
+
+#nuestros-programas .card:nth-child(3) {
+    background-image: linear-gradient(to left, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.6)), url('../img/python-cropped.jpg');
+}
+
+#nuestros-programas .container .programas .card p {
+    display: none;
+}
+
+#caracteristicas .container {
+    text-align: center;
+    padding: 100px 12px;
+}
+
+#caracteristicas li {
+    margin: 16px 0;
+    font-weight: bold;
+}
+
+#final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(30,30,30);
+    color: white;
+    height: 50vh;
+}
+
+footer {
+    background-color: rgb(245, 245, 245);
+}
+
+footer p {
+    padding: 24px 12px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+}
+
+@media (min-width: 840px) {
+
+    header .container {
+        flex-direction: row;
+        align-items: baseline;
+    }
+
+    header .container nav {
+        flex-direction: row;
+        align-items: center;
+        padding-right: 20px;
+    }
+
+    #nuestros-programas .container .programas .card p {
+        display: block;
+    }
+
+    #somos .container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #somos .texto {
+        width: 45%;
+        max-width: 600px;
+    }
+
+    #somos .img-container {
+        background-image: url("../img/somos-proya.jpg");
+        width: 45%;
+    }
+ 
+    #nuestros-programas .container .programas {
+        padding: 50px 12px;
+        display: flex;
+    }
+
+    #nuestros-programas .card {
+        padding: 20px;
+    }
+
+    #nuestros-programas .card p {
+        text-align: justify;
+    }
+
+}
