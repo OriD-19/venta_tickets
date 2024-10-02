@@ -37,9 +37,13 @@ nav{
     z-index: 100;
 }
 
+nav+p{
+    font-size: 100px;
+}
 
 @media screen and (min-width:640px){
     header{
         height: 60vw;
     }
 }
+
