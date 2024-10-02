@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+:root{
+    --fondo: #02020e;
+    --titulo: #ffff;
+}
+header{
+    height: 45vh;
+    font-family: "Outfit", sans-serif;
+    color: var(--titulo);
+    background-image: linear-gradient(to left, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.6)), url('../img/Destacado1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+    flex-direction: column;
+}
+header p{
+width: 70%;
+margin: 0 auto 15%;
+padding-top: 5%;
+font-size: 7vw;
+text-align: center;
+font-weight: bold;
+}
+
+p+img#scroll{
+    width: 10vw;
+    height: 10vw;
+}
+
+
+nav{
+    position: sticky;
+    z-index: 100;
+}
+
+
+@media screen and (min-width:640px){
+    header{
+        height: 60vw;
+    }
+}
