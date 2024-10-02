@@ -16,9 +16,12 @@ html, body{
 body{
     background-color: var(--fondo);
 }
+
 nav{
     width: 100%;
+    position: sticky;
     top: 0;
+    z-index: 0;
     background-color: var(--titulo);
     height: 15vw;
     display: flex;
@@ -70,9 +73,5 @@ footer p{
 
     span>a{
         padding: 10px;
-    }
-
-    footer p{
-        padding-top: 1vw;
     }
 }
