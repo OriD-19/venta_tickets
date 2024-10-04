@@ -53,7 +53,7 @@ p, li {
     font-size: 1.25em;
     font-weight: bold;
     color: white;
-    background-color: var(--encabezado);
+    background-color: var(--encabezado); 
     padding: 10px 30px;
     text-decoration: none;
     border-radius: 5px;
@@ -87,7 +87,7 @@ p, li {
     padding-top: 40px;
 }
 
-#nuestros-paquetes .container{
+
 #nuestros-paquetes .container{
     padding: 50px 12px;
 }
@@ -122,7 +122,7 @@ p, li {
     margin-bottom: 2rem;
 }
 
-#nuestros-paquetes .card div h3 ul{
+
 #nuestros-paquetes .card div h3 ul{
     margin: 0 10%;
 }
@@ -183,4 +183,3 @@ p, li {
         align-items: center;
     }
 }
-
