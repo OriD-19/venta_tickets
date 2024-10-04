@@ -3,7 +3,7 @@
     --titulo: #fff;
     --encabezado: #720605;
 
-    /* escala de grises, para sombras y colores oscuros */
+    /* Escala de grises, para sombras y colores oscuros */
     --gray90: hsl(0, 0%, 90%);
     --gray80: hsl(0, 0%, 80%);
     --gray70: hsl(0, 0%, 70%);
@@ -11,6 +11,7 @@
     --gray10: hsl(0, 0%, 10%);
     --gray5: hsl(0, 0%, 5%);
 
+    /* Colores de acento */
     --especial1: #d11613;
     --especial2: #E6AF2E;
 
@@ -23,7 +24,7 @@
     --xl: 1.75rem;
     --xxl: 2.5rem;
 
-    /* estilos de fuentes */
+    /* Estilos de fuente */
     /* clamp() sirve para definir tamaños de fuente fluidos segun el viewport */
     /* herramienta utilizada: https://royalfig.github.io/fluid-typography-calculator/ */
     --fuente: "Outfit", sans-serif;
@@ -35,8 +36,10 @@
     --h4: bold clamp(1.25rem, 1rem + 1.25vw, 2.5rem)/1.6em var(--fuente);
 }
 
+* { font-family: var(--fuente) }
+
 .encabezado {
-    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("../img/feid.webp");
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../img/feid.webp");
     background-size: cover;
     background-position: center;
     height: 15rem;
@@ -46,13 +49,25 @@
     justify-content: center;
 }
 
+.encabezado::after {
+    content: "";
+    height: var(--l);
+    background-color: var(--especial2);
+    width: 100%;
+    display: block;
+    position: relative;
+    bottom:0;
+    z-index: 0;
+}
+
 .encabezado h1 {
-    text-align: center;
     margin: auto auto;
 }
 
 .encabezado h1 span {
     font-size: 1rem;
+    font: var(--h4);
+    font-weight: normal;
     color: var(--gray60);
     display: block;
 }
@@ -90,7 +105,7 @@ h4 {
     line-height: 1em;
 }
 
-fieldset.general {
+fieldset {
     border: none;
     background: linear-gradient(135deg, var(--gray10), var(--gray5));
     padding: var(--l);
@@ -99,11 +114,103 @@ fieldset.general {
     border-radius: 10px;
 }
 
-fieldset.general legend {
+fieldset legend {
     font: var(--h4);
 }
 
-input {
+input, select {
+    color: white;
+    background-color: var(--fondo);
+    width: 100%;
+    border-radius: var(--xxs);
+    display: block;
+    margin-bottom: var(--s);
+    margin-top: var(--xxs);
+    transition: background-color .25s;
+    padding: var(--xxs);
+    border: none;
+    border: 2px solid var(--gray60);
+}
+
+input:focus, select:focus {
+    background-color: white;
     color: black;
 }
 
+fieldset.info_tickets img {
+    display: block;
+    margin: var(--l) auto;
+    border-radius: 10px;
+}
+
+.tarjetas {
+    display: flex;
+    gap: var(--xxs);
+    margin-bottom: var(--l);
+}
+
+.tarjetas img {
+    width: 15%;
+}
+
+.exp_cvv {
+    display: flex;
+    gap: var(--xl);
+}
+
+.exp_cvv div:first-child {
+    flex: 2;
+}
+
+.exp_cvv div:nth-child(2) {
+    flex: 1;
+}
+
+form h3 {
+    text-align: center;
+    color: var(--especial2);
+}
+
+form input[type="submit"] {
+    width: 50%;
+    font: var(--h4);
+    margin: var(--l) auto;
+    font-weight: normal;
+    background: var(--especial1);
+    border: none;
+    padding: var(--s);
+    border-radius: var(--xs);
+    cursor: pointer;
+}
+
+@media (width >= 481px) {
+
+    .encabezado {
+        height: 25rem;
+    }
+    
+    form {
+        width: 80%;
+        margin: 0 auto;
+    } 
+}
+
+@media (width >= 769px) {
+    form {
+        width: 50%;
+        margin: 0 auto;
+    } 
+
+    .encabezado {
+        background-position: center 10%;
+    }
+
+    .encabezado::after {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    form input[type="submit"] {
+        margin: var(--xxl) auto;
+    }
+}
