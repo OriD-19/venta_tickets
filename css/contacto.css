@@ -1,17 +1,29 @@
-:root {
+:root{
     --fondo: #02020e;
     --titulo: #ffff;
     --encabezado: #720605;
     --especial1: #E6AF2E;
     --especial2: #A3320B;
-    --fuente: 'Oufit', sans-serif;
+    --fuente: "Outfit", sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --fuente3: "Poiret One", sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 h1 {
     font-size: 7vh;
 }
 
+#banner p {
+    color: var(--titulo);
+    font-size: 3vh;
+    font-family: var(--fuente2);
+}
 
 #banner {
     display: flex;
@@ -31,7 +43,7 @@ h1 {
     border: none;
     font-family: var(--fuente);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 4vh;
 }
 
 .form-container {
@@ -39,7 +51,7 @@ h1 {
     justify-content: space-around;
     align-content: center;
     background-color: var(--titulo);
-    padding: 30px;
+    padding: 10vh;
     border-radius: 10px;
     width: 90%;
     margin: 5%;
@@ -48,13 +60,12 @@ h1 {
 .form-contacto {
     width: 100%;
     max-width: 450px;
-    margin-left: 50px;
 }
 
 .form-container img {
     max-width: 100%;
     height: auto;
-    width: 400px;
+    width: 70vh;
     margin: 10px;
 }
 
@@ -64,8 +75,8 @@ h1 {
     border-radius: 15px;
     border: 1px solid var(--fondo);
     width: 100%;
-    padding: 20px;
-    height: 35px;
+    padding: 3.5vh;
+    height: 2vh;
     margin: 10px 0;
 }
 
