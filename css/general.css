@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 *{
     padding:0;
     margin: 0;
@@ -8,17 +9,40 @@
     --fondo: #02020e;
     --titulo: #ffff;
     --encabezado: #720605;
+    --especial1: #E6AF2E;
+    --especial2: #A3320B;
+    --fuente: "Outfit", sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --fuente3: "Poiret One", sans-serif;
 }
 
-html, body{
-    height: 100%;
+.button {
+    background-color: var(--especial1);
+    text-align: center;
+    text-decoration: none;
+    color: var(--fondo);
+    font-family: var(--fuente);
+    font-weight: bold;
+    font-size: 1em;
+    display: inline-block;
+    padding: 20px 30px;
+    border-radius: 20px;
+    margin: 20px auto;
 }
+
+.button:hover {
+    background-color: var(--encabezado);
+    color: var(--titulo);
+}
+
 body{
     background-color: var(--fondo);
 }
+
 nav{
     width: 100%;
     top: 0;
+    z-index: 10;
     background-color: var(--titulo);
     height: 15vw;
     display: flex;
@@ -27,30 +51,46 @@ nav{
     align-items: center;
 }
 
+h2{
+    font-family: var(--fuente3);
+    color: var(--especial1);
+    font-size: 8vw;
+}
+
+h3{
+    color: var(--titulo);
+    font-family: var(--fuente2);
+}
+
+
 #logo{
-    width: 10vw;
+    width: 12vw;
 }
 
 span>a{
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--fuente2);
     color: var(--encabezado);
     font-weight: bolder;
-    font-size: 2vw;
+    font-size: 3vw;
     padding: 4px;
 }
 
 span>a:hover{
-    font-size: 3vw;
+    font-size: 2.2vw;
     color: var(--fondo);
+    font-style: italic;
+
 }
 
 
 footer{
     background-color: var(--titulo);
     bottom: 0;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--fuente);
     height: 5vw;
+    position: fixed;
+    width: 100%;
 }
 
 footer p{
@@ -59,20 +99,60 @@ footer p{
     padding-top: 0.7vw;
 }
 
-@media screen and (min-width:640px){
+h1{
+    font-family: var(--fuente);
+    color: var(--titulo);
+    font-weight: bold;
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px){
     nav{
-        height: 8vw;
+        height: 6vw;
     }
 
     #logo{
-        width: 7vw;
+        width: 6vw;
     }
 
     span>a{
         padding: 10px;
+        font-size: 2vw;
+    }
+    footer{
+        height: 3vw;
+        position: static;
+        bottom: 0;
+    }
+    footer p{
+        font-size: 1.3vw;
+    }
+
+   }
+
+
+
+@media screen and (min-width: 769px) {
+    nav{
+        height: 5.5vw;
+    }
+
+    #logo{
+        width: 6vw;
+    }
+
+    span>a{
+        padding: 10px;
+        font-size: 2vw;
+    }
+    footer{
+        height: 3vw;
+        position: static;
+        bottom: 0;
     }
 
     footer p{
-        padding-top: 1vw;
+        font-size: 1.3vw;
     }
-}
+
+   }
