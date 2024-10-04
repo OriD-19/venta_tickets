@@ -8,11 +8,15 @@
     --fondo: #02020e;
     --titulo: #ffff;
     --encabezado: #720605;
+    --especial1: #E6AF2E;
+    --especial2: #A3320B;
+    --fuente: 'Oufit', sans-serif;
 }
 
 html, body{
     height: 100%;
 }
+
 body{
     background-color: var(--fondo);
 }
@@ -31,7 +35,7 @@ nav{
 }
 
 #logo{
-    width: 10vw;
+    width: 20vh;
 }
 
 span>a{
@@ -48,18 +52,24 @@ span>a:hover{
     color: var(--fondo);
 }
 
+h1, p{
+    color: var(--titulo);
+    font-family: var(--fuente);
+}
+
 
 footer{
     background-color: var(--titulo);
     bottom: 0;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--fuente);
     height: 5vw;
 }
 
 footer p{
     font-size: 2vw;
     text-align: center;
-    padding-top: 0.7vw;
+    padding-top: 0.8vw;
+    color: var(--encabezado);
 }
 
 @media screen and (min-width:640px){

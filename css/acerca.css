@@ -1,0 +1,113 @@
+:root {
+    --fondo: #02020e;
+    --titulo: #ffff;
+    --encabezado: #720605;
+    --especial1: #E6AF2E;
+    --especial2: #A3320B;
+    --fuente: 'Oufit', sans-serif;
+}
+
+
+#banner2 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    height: 70vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/banner2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 7vh;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-family: var(--fuente);
+    color: var(--titulo);
+    padding: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h3 {
+    font-family: var(--fuente);
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    color: var(--especial2);
+}
+
+h3:hover {
+    color: var(--encabezado);
+}
+
+p {
+    color: var(--fondo);
+    font-size: 1.2em;
+    padding: 2%;
+}
+
+.equipo {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.miembro {
+    width: 26%;
+    margin: 10px 1%;
+    border-radius: 15px;
+    border: #F0F0F0 2px solid;
+    height: auto;
+    padding: 2%;
+    text-align: justify;
+    background-color: var(--titulo);
+}
+
+.miembro img {
+    max-width: 90%;
+    display: block;
+    margin: 0.5% auto 10%;
+    border-radius: 60px;
+    border: 10px solid var(--especial2);
+}
+
+.miembro img:hover {
+    border: 10px solid var(--encabezado);
+}
+
+
+/*Estilo para móviles*/
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    div {
+        width: 95%;
+    }
+
+}
+
+
+/*Estilos para tablet*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    .container {
+        width: 49%;
+    }
+
+    .container .card {
+        width: 99%;
+    }
+
+}
+
+@media screen and (min-width:769px) {}
