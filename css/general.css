@@ -11,10 +11,20 @@
     --especial1: #E6AF2E;
     --especial2: #A3320B;
     --fuente: 'Oufit', sans-serif;
+    --titulo2: #E6AF2E;
+    --fuente1: "Outfit", sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --fuente3: "Poiret One", sans-serif;
 }
 
 body{
     background-color: var(--fondo);
+}
+
+
+* {
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.96rem + 0.19999999999999996vw, 1.2rem);
 }
 
 nav{
@@ -31,7 +41,19 @@ nav{
 }
 
 #logo{
-    width: 20vh;
+    width: 10%;
+    height: auto;
+}
+
+h2{
+    font-family: var(--fuente3);
+    color: var(--titulo2);
+    font-size: 8vw;
+}
+
+h3{
+    color: var(--titulo);
+    font-family: var(--fuente2);
 }
 
 span>a{
@@ -50,7 +72,7 @@ span>a:hover{
 
 h1, p{
     color: var(--titulo);
-    font-family: var(--fuente);
+    font-family: var(--ff2);
 }
 
 
@@ -68,16 +90,53 @@ footer p{
     color: var(--encabezado);
 }
 
-@media screen and (min-width:640px){
+@media screen and (min-width: 481px) and (max-width: 768px){
     nav{
-        height: 8vw;
+        height: 6vw;
     }
 
     #logo{
-        width: 7vw;
+        width: 6vw;
     }
 
     span>a{
         padding: 10px;
+        font-size: 2vw;
     }
-}
+    footer{
+        height: 3vw;
+        position: static;
+        bottom: 0;
+    }
+    footer p{
+        font-size: 1.3vw;
+    }
+
+   }
+
+
+
+@media screen and (min-width: 769px) {
+    nav{
+        height: 5.5vw;
+    }
+
+    #logo{
+        width: 6vw;
+    }
+
+    span>a{
+        padding: 10px;
+        font-size: 2vw;
+    }
+    footer{
+        height: 3vw;
+        position: static;
+        bottom: 0;
+    }
+
+    footer p{
+        font-size: 1.3vw;
+    }
+
+   }
