@@ -3,6 +3,7 @@
 *{
     padding:0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 :root{
@@ -59,82 +60,122 @@ p, li {
     display: inline-block;
 }
 
+.card>a:hover{
+    background-color: var(--titulo2);
+}
+
 /*Pone orden al encabezado donde ira la imagen del contenido*/
-#encabezado2{
+#encabezado{
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     height: 80vh;
-    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/concierto2.png");
+    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/imagen_concierto.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#encabezado2 h1{
+#encabezado h1{
     color: white;
     font-size: 5em;
 }
 
 /*Ayuda a alinear las cajas dentro del container*/
-#nuestros-paquetes{
+#nuestras-ofertas{
     background-color: var(--fondo);
     color: white;
     text-align: center;
     padding-top: 40px;
 }
 
-#nuestros-paquetes.container{
+#nuestras-ofertas .container{
     padding: 50px 12px;
 }
 
-#nuestros-paquetes .paquetes{
+#nuestras-ofertas .ofertas{
     margin: auto;
 }
 
-#nuestros-paquetes .paquetes ul{
+#nuestras-ofertas .ofertas p{
     text-align: justify;
 }
 
-#nuestros-paquetes .card{
+#nuestras-ofertas .card{
     padding: 40px 0px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
-    flex-direction: row;
-
+    justify-content: space-around;
 }
 
-#nuestros-paquetes .card div {
+#nuestras-ofertas .card div {
     display: flex;
     flex-direction: column;
+    width: 40%;
+    justify-content: space-around;
 }
 
-#nuestros-paquetes .card div h3, ul{
+#nuestras-ofertas .card div h3 {
+    margin-bottom: 2rem;
+}
+
+#nuestras-ofertas .card div h3 ul{
     margin: 0 10%;
 }
 
-#nuestros-paquetes .card img{
-    width: 30%;
-    height: 20%;
+#nuestras-ofertas .card img{
+    width: 40%;
+    height: auto;
+    align-self: center;
+    border-radius: 20px;
 }
 
-#nuestros-paquetes .card p{
+#nuestras-ofertas .card p{
     display: block ;
     padding: 0px 20px; 
 }
 
 /*PA CELULAR*/
-@media (min-width: 640px) {
+@media screen and (max-width: 480px) {
+    #nuestras-ofertas .card {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    #nuestras-ofertas .card img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    #nuestras-ofertas .card div {
+        width: 90%;
+        text-align: center;
+        margin-top: 10px;
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){
+    #nuestras-ofertas .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nuestras-ofertas .card img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    #nuestras-ofertas .card div {
+        width: 70%;
+        text-align: center;
+        margin-top: 10px;
+    }
 
 }
 
 @media screen and (min-width: 769px) {
-   
+    #nuestras-ofertas .card:nth-child(2) {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
 }

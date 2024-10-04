@@ -13,6 +13,8 @@
     --fuente1: "Outfit", sans-serif;
     --fuente2: 'Open Sans', sans-serif;
     --fuente3: "Poiret One", sans-serif;
+    --gray10: hsl(0, 0%, 10%);
+    --gray5: hsl(0, 0%, 5%);
 }
 
 body{
@@ -92,26 +94,13 @@ p, li {
 #nuestras-ofertas .card{
     padding: 50px 0px;
     margin: 30px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(var(--gray10), var(--gray5));
+    border-radius: 10px;
 }
 
 #nuestras-ofertas .card p{
     display: none;
     padding: 0px 30px;
-}
-
-#nuestras-ofertas .card:nth-child(1){
-    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("../img/broncos.jpg"); /*Pendiente de imagen*/
-}
-
-#nuestras-ofertas .card:nth-child(2){
-    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("../img/morat.jpg"); /*Pendiente de imagen*/
-}
-
-#nuestras-ofertas .card:nth-child(3){
-    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("../img/antoni.png"); /*Pendiente de imagen*/
 }
 
 /*Pone orden al encabezado donde ira la imagen del contenido*/
@@ -147,42 +136,79 @@ p, li {
 #nuestros-paquetes .card{
     padding: 50px 0px;
     margin: 30px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(var(--gray10), var(--gray5));
+    border-radius: 10px;
 }
 
-#nuestros-paquetes .card p li{
+#nuestros-paquetes .card ul{
     display: none;
     padding: 0px 30px;
 }
 
-#nuestros-paquetes .card:nth-child(1){
-    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("../img/VIP.jpg"); /*Pendiente de imagen*/
-}
-
-#nuestros-paquetes .card:nth-child(2){
-    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("../img/Golden.jpeg"); /*Pendiente de imagen*/
-}
-
-#nuestros-paquetes .card:nth-child(3){
-    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("../img/superfan.png"); /*Pendiente de imagen*/
-}
-
 /*PA CELULAR*/
-@media (min-width: 640px) {
+@media screen and (min-width: 481px) and (max-width: 768px){
+    #encabezado h1, #encabezado2 h1{
+        margin: auto 5%;
+    }
+
     /*Para la primera parte de las ofertas*/
     #nuestras-ofertas .container{
-        flex-direction: row; /* Cambia el coso a fila */
+        flex-direction: row; 
         justify-content: space-around;
     }
     #nuestras-ofertas .card{
-        width: 30%; /* Ajusta el ancho de las tarjetas para que se muestren en fila */
+        width: 90%; 
         padding: 20px;
         margin: 20px 10px;
     }
     #nuestras-ofertas .card p{
-        display: block; /* Muestra los párrafos en pantallas grandes */
+        display: none; 
+        text-align: justify;
+    }
+
+    #nuestras-ofertas .ofertas{
+        display: flex;
+        flex-direction: column;
+        margin: 0 15%;
+    }
+
+    /*Para la segunda parte de los paquetes*/
+    #nuestros-paquetes .container{
+        flex-direction: row; 
+        justify-content: space-around;
+    }
+    #nuestros-paquetes .card{
+        width: 90%; 
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    #nuestros-paquetes .card p{
+        display: none; 
+        text-align: justify;
+
+    }
+
+    #nuestros-paquetes .paquetes{
+        display: flex;
+        flex-direction: column;
+        margin: 0 15%;
+    }
+}
+
+
+@media screen and (min-width: 769px) {
+    /*Para la primera parte de las ofertas*/
+    #nuestras-ofertas .container{
+        flex-direction: column; 
+        justify-content: space-around;
+    }
+    #nuestras-ofertas .card{
+        width: 30%; 
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    #nuestras-ofertas .card p{
+        display: block; 
         text-align: justify;
     }
 
@@ -192,28 +218,21 @@ p, li {
 
     /*Para la segunda parte de los paquetes*/
     #nuestros-paquetes .container{
-        flex-direction: row; /* Cambia el coso a fila */
+        flex-direction: row; 
         justify-content: space-around;
     }
     #nuestros-paquetes .card{
-        width: 30%; /* Ajusta el ancho de las tarjetas para que se muestren en fila */
+        width: 30%; 
         padding: 20px;
         margin: 20px 10px;
     }
-    #nuestros-paquetes .card p{
-        display: block; /* Muestra los párrafos en pantallas grandes */
+    #nuestros-paquetes .card ul{
+        display: block; 
         text-align: justify;
+
     }
 
     #nuestros-paquetes .paquetes{
         display: flex;
     }
-}
-
-@media screen and (min-width: 481px) and (max-width: 768px){
-
-}
-
-@media screen and (min-width: 769px) {
-   
 }
