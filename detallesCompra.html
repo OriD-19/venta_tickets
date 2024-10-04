@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,11 +40,75 @@
                     <legend>Datos generales</legend>
 
                     <label for="nombre">Nombre</label>
-                    <input type="text" pattern="*[^\d]">
+                    <input type="text" pattern="[^\d]*">
 
-                    <label for="apellido">Apellidos</label>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" pattern="[^\d]*">
+
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" />
+
+                    <label for="dui">DUI</label>
+                    <input type="text" pattern="[0-9]{9}" />
 
                 </fieldset> 
+
+                <fieldset class="info_tickets">
+                    <legend>Tickets</legend>
+                    
+                    <label for="ubicacion">Ubicacion</label>
+                    <select name="ubicacion" id="ubicacion">
+                        <option value="platinum">Platinum $115</option>
+                        <option value="vipl">VIP $65</option>
+                        <option value="trib_baja">Tribuna Baja $45</option>
+                        <option value="trib_alta">Tribuna Alta $35</option>
+                        <option value="general">General $20</option>
+                    </select>
+
+                    <label for="paquete">Paquete Adicional</label>
+                    <select name="paquete" id="paquete">
+                        <option value="ninguno">Ninguno</option>
+                        <option value="p_vip">Paquete VIP</option>
+                        <option value="golden_circle">Paquete Golden Circle</option>
+                        <option value="super_fan">Paquete Super Fan</option>
+                    </select>
+
+                    <img src="img/venta_tickets.jpg" alt="Distribucion de los asientos durante el concierto">
+
+
+                </fieldset>
+
+                <fieldset class="metodo_pago">
+                    <legend>Método de pago</legend>
+
+                    <div class="tarjetas">
+                        <img src="img/visa.png" alt="Visa">
+                        <img src="img/mastercard.webp" alt="MasterCard">
+                    </div>
+
+                    <label for="num_tarjeta">Número de tarjeta</label>
+                    <input type="text" pattern="[0-9]{16}">
+
+                    <label for="nombre">Nombre del titular</label>
+                    <input type="text" pattern="[^\d]*">
+
+                    <div class="exp_cvv">
+                        <div>
+                            <label for="fecha_exp">Vence</label>
+                            <input type="date">
+                        </div>
+
+                        <div>
+                            <label for="cvv">CVV</label>
+                            <input type="number" min="100" max="999">
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <h3>Total: $115.00</h3>
+
+                <input type="submit" value="Comprar">
             </form>
         </main>
 
