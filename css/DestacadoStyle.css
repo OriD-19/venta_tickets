@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('general.css');
+
 :root{
-    --fondo: #02020e;
-    --titulo: #ffff;
+--gray10: hsl(0, 0%, 10%);
+--gray5: hsl(0, 0%, 5%);
+--fondo2:#0a0a2e;
 }
 header{
-    height: 45vh;
-    font-family: "Outfit", sans-serif;
-    color: var(--titulo);
+    height: 90vw;
     background-image: linear-gradient(to left, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.6)), url('../img/Destacado1.jpg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -17,29 +18,271 @@ header{
     align-content: space-evenly;
     flex-direction: column;
 }
-header p{
+
+header h1{
 width: 70%;
 margin: 0 auto 15%;
 padding-top: 5%;
 font-size: 7vw;
 text-align: center;
-font-weight: bold;
 }
 
-p+img#scroll{
+h1+img#scroll{
     width: 10vw;
     height: 10vw;
 }
 
-
 nav{
     position: sticky;
-    z-index: 100;
+}
+
+section h2{
+    margin: 8vw 5vw;
+    padding-left: 4vw;
+}
+
+section.eventos-populares article img{
+    display: block;
+    margin: 5vw auto;
+    width: 70vw;
+    height: 70vw;
+}
+
+section.eventos-populares article p{
+    color: var(--titulo);
+    font-size: 5vw;
+    padding: 2vw 5vw;
+    text-align: center;
+    font-family: var(--fuente3);
+    margin-bottom: 5vw;
+}
+
+section.eventos-populares article p span{
+    display: block;
+    margin-top: 4vw;
+    font-weight: bolder;
+}
+
+section.eventos-populares article h3{
+    font-size: 5vw;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+section.eventos-populares article a.button{
+width: 30vw;
+margin: 3vw auto;
+}
+
+section.eventos-populares article div.Content-Events{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+section.Mas-eventos{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--fondo2);
+    margin-top: 5vw;
+    border-top: solid 3px;
+}
+
+section.Mas-eventos>article{
+    background: linear-gradient(var(--gray10), var(--gray5));
+    width: 75%;
+    margin: 5vw auto;
+    border-radius: 15%;
+    display: flex;
+    border: 1px solid;
+    height: 100vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.Mas-eventos>article>img{
+    border-radius: 50%;
+    display: block;
+    margin: 4vw auto;
+    width: 50vw;
+    height: 50vw;
+}
+
+section.Mas-eventos>article>p{
+    display: none;
+}
+
+section.Mas-eventos h3{
+    font-size: 5vw;
+    display: inline-block;
+    margin: 2vw auto;
 }
 
 
-@media screen and (min-width:640px){
+.Mas-eventos article:last-child{
+margin-bottom: 15vw;
+}
+
+section.Mas-eventos>article:hover{
+box-shadow: 10px 10px 10px rgba(10, 1, 1, 0.5);
+}
+
+
+
+
+@media screen and (min-width: 481px) and (max-width:
+   768px){
     header{
-        height: 60vw;
+        height: 55vw;
     }
-}
+    header h1{
+        padding-top: 8%;
+        margin: 0 auto 2%;
+    }
+
+    section.Mas-eventos>article{
+        width: 40%;
+        margin: 3vw auto;
+        border-radius: 15%;
+        height: 38vw;
+    }
+
+
+    section.Mas-eventos>article>img{
+        border-radius: 50%;
+        display: block;
+        margin: 1vw auto;
+        width: 10vw;
+        height: 10vw;
+    }
+    
+    section.Mas-eventos>article>p{
+        display: inline-block;
+        padding: 3vw;
+        color: var(--titulo);
+        font-size: 1.4vw;
+        font-family: var(--fuente3);
+        text-align: justify;
+        margin: 0 auto;
+    }
+
+    section.Mas-eventos h3{
+        font-size: 3vw;
+        margin: 0 auto;
+    }
+
+    section.Mas-eventos .button{
+        padding: 2vw;
+        width: 10vw;
+        font-size: 1.3vw;
+        margin: 0 auto;
+            
+    }
+
+    .Mas-eventos article:last-child{
+        margin-bottom: 5vw;
+        }
+        section.Mas-eventos>article>p span{
+            display: block;
+            font-weight: bold;
+            margin-top: 1vw;
+        }
+
+   }
+
+
+
+@media screen and (min-width: 769px) {
+    header{
+       height: 55vw;
+    }
+    header h1{
+        padding-top: 10%;
+        margin: 0 auto 2%;
+    }
+    section.eventos-populares article {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 5vw 0;
+    }
+
+    section.eventos-populares article img{
+        width: 30%;
+        height: 30vw;
+    }
+
+    section.eventos-populares article div.Content-Events{
+        width: 65%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    section.eventos-populares article h3{
+        font-size: 2.5vw;
+    }
+
+    section h2{
+        font-size: 6vw;
+    }
+
+    section.eventos-populares article p{
+        font-size: 2.5vw;
+        text-align: justify;
+    }
+
+    section.eventos-populares article a.button{
+        padding: 2vw;
+        width: 12vw;
+        font-size: 1.5vw;
+        margin: 0 auto;
+        }
+
+        section.eventos-populares article p span{
+            display: block;
+            margin-top: 2vw;
+            font-weight: bolder;
+        }
+
+        section.Mas-eventos>article{
+            width: 40%;
+            margin: 2vw auto;
+            border-radius: 15%;
+            height: 50vw;
+        }
+
+
+        section.Mas-eventos>article>img{
+            border-radius: 50%;
+            display: block;
+            margin: 1vw auto;
+            width: 12vw;
+            height: 12vw;
+        }
+        
+        section.Mas-eventos>article>p{
+            display: inline-block;
+            padding: 3vw;
+            color: var(--titulo);
+            font-size: 1.8vw;
+            font-family: var(--fuente3);
+            text-align: justify;
+            margin: 0 auto;
+        }
+
+        section.Mas-eventos>article>p span{
+            display: block;
+            font-weight: bold;
+            margin-top: 2vw;
+        }
+
+        section.Mas-eventos h3{
+            font-size: 3vw;
+            margin: 0 auto;
+        }
+
+        .Mas-eventos article:last-child{
+            margin-bottom: 5vw;
+            }
+
+   }
