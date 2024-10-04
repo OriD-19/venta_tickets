@@ -1,10 +1,12 @@
-:root {
+:root{
     --fondo: #02020e;
     --titulo: #ffff;
     --encabezado: #720605;
     --especial1: #E6AF2E;
     --especial2: #A3320B;
-    --fuente: 'Oufit', sans-serif;
+    --fuente: "Outfit", sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --fuente3: "Poiret One", sans-serif;
 }
 
 
@@ -48,12 +50,22 @@ h3:hover {
 
 p {
     color: var(--fondo);
+    font-family: var(--fuente2);
     font-size: 1.2em;
     padding: 2%;
 }
 
+p a {
+    color: var(--encabezado);
+    text-decoration: none;
+}
+
+p a:hover {
+    color: var(--especial1);
+}
+
 .equipo {
-    width: 80%;
+    width: 100%;
     margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
@@ -61,21 +73,24 @@ p {
 }
 
 .miembro {
-    width: 26%;
+    width: 50vh;
     margin: 10px 1%;
     border-radius: 15px;
     border: #F0F0F0 2px solid;
     height: auto;
     padding: 2%;
     text-align: justify;
+    align-items: center;
     background-color: var(--titulo);
 }
 
 .miembro img {
     max-width: 90%;
+    height: 40vh;
     display: block;
     margin: 0.5% auto 10%;
-    border-radius: 60px;
+    align-items: center;
+    border-radius: 100%;
     border: 10px solid var(--especial2);
 }
 
@@ -96,7 +111,6 @@ p {
 
 }
 
-
 /*Estilos para tablet*/
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
@@ -110,4 +124,8 @@ p {
 
 }
 
-@media screen and (min-width:769px) {}
+@media screen and (min-width:769px) {
+    .container {
+        width: 100%;
+    }
+}
