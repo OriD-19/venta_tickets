@@ -1,3 +1,14 @@
+:root{
+    --fondo: #02020e;
+    --titulo: #ffff;
+    --encabezado: #720605;
+    --especial1: #E6AF2E;
+    --especial2: #A3320B;
+    --fuente: "Outfit", sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --fuente3: "Poiret One", sans-serif;
+}
+
 
 #banner2 {
     display: flex;
@@ -10,7 +21,6 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 2rem;
 }
 
 h1 {
@@ -43,10 +53,6 @@ p {
     font-family: var(--fuente2);
     font-size: 1.2em;
     padding: 2%;
-}
-
-footer p {
-    padding: 0;
 }
 
 p a {
