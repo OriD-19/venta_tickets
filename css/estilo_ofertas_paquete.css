@@ -101,6 +101,7 @@ p, li {
 #nuestras-ofertas .card p{
     display: none;
     padding: 0px 30px;
+    color: white;
 }
 
 /*Pone orden al encabezado donde ira la imagen del contenido*/
