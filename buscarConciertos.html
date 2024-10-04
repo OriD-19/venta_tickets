@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Buscar Conciertos</title>
+        <link href="css/general.css" rel="stylesheet">
+        <link href="css/buscarConciertos.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <img src="img/logo.png" alt="logo" id="logo">
+            <div class="items">
+                <span>
+                    <a href="#">Inicio</a>
+                </span>
+                <span>
+                    <a href="#">Eventos</a>
+                </span>
+                <span>
+                    <a href="#">Calendario</a>
+                </span>
+                <span>
+                    <a href="#">Ofertas</a>
+                </span>
+                <span>
+                    <a href="#">Acerca de</a>
+                </span>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+
+
+        <main>
+            <h1>Buscar conciertos</h1>
+            <form action="buscar_concierto.php">
+                <h2>Encontrar eventos cercanos</h2>
+                <div class="form_control">
+                    <label for="tipo_evento">
+                        <h3>Tipo de evento</h3>
+                    </label>
+                    <select name="tipo_evento" id="tipo_evento">
+                        <option value="concierto">Concierto</option>
+                        <option value="partido">Partido</option>
+                        <option value="vainas">Otros</option>
+                    </select>
+                </div>
+
+                <div class="form_control">
+                    <h3>Fecha</h3>
+                    <div class="select_fechas">
+                        <div>
+                            <label for="fecha_desde">
+                                <h4>Desde</h4>
+                            </label>
+                            <input type="date" name="fecha_desde" id="fecha_desde">
+                        </div>
+                        <div>
+                            <label for="fecha_hasta">
+                                <h4>Hasta</h4>
+                            </label>
+                            <input type="date" name="fecha_hasta" id="fecha_hasta">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form_control">
+                    <label for="lugar_evento">
+                        <h3>Lugar</h3>
+                    </label>
+                    <select name="lugar_evento" id="lugar_evento">
+                        <option value="cusca">Estadio Cuscatlán</option>
+                        <option value="teatro">Teatro Nacional</option>
+                        <option value="salamanca">Salamanca Centros y convenciones</option>
+                        <option value="otros">Otros</option>
+                    </select>
+
+                </div>
+
+                <input type="submit" value="Buscar">
+            </form>
+
+            <div class="resultados">
+                <h2>Resultados</h2>
+                <div class="card">
+                    <img src="img/ximena.jpg" alt="concierto de ximena sariñana">
+                    <h4>Ximena Sariñana</h4>
+                    <p>Lugar: Estadio Cuscatlán</p>
+                    <p>Hora: 7:00 PM</p>
+                    <p>Fecha: 18 de octubre</p>
+                </div>
+
+                <div class="card">
+                    <img src="img/feid.webp" alt="concierto de ferxxo">
+                    <h4>Ferxxocalipsis World Tour</h4>
+                    <p>Lugar: Estadio Cuscatlán</p>
+                    <p>Hora: 9:00 PM</p>
+                    <p>Fecha: 30 de octubre</p>
+                </div>
+
+            </div>
+        </main>
+
+
+        <!-- Contenido principal -->
+
+        <footer>
+            <p>
+                Todos los derechos reservados
+            </p>        
+        </footer>
+    </body>
+</html>
