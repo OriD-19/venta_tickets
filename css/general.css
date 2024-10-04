@@ -2,17 +2,46 @@
 *{
     padding:0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 :root{
     --fondo: #02020e;
-    --titulo: #ffff;
+    --titulo: #fff;
     --encabezado: #720605;
+
+    /* escala de grises, para sombras y colores oscuros */
+    --gray90: hsl(0, 0%, 90%);
+    --gray80: hsl(0, 0%, 80%);
+    --gray70: hsl(0, 0%, 70%);
+    --gray60: hsl(0, 0%, 60%);
+    --gray10: hsl(0, 0%, 10%);
+    --gray5: hsl(0, 0%, 5%);
+
+    --color-accent: #d11613;
+
+    /* Espaciado, para definir margenes y padding estandares */
+    --xxs: .25rem;
+    --xs: .5rem;
+    --s: .75rem;
+    --m: 1rem;
+    --l: 1.25rem;
+    --xl: 1.75rem;
+    --xxl: 2.5rem;
+
+    /* estilos de fuentes */
+    /* clamp() sirve para definir tamaños de fuente fluidos */
+    /* herramienta utilizada: https://royalfig.github.io/fluid-typography-calculator/ */
+    --ff1: 'Open Sans', sans-serif;
+    --ff2: "Outfit", sans-serif;
+    --ff3: 'Open Sans', sans-serif;
+    --ff4: "Poiret One", sans-serif;
+    --h1: bold clamp(2rem, 1.6rem + 2vw, 4rem)/1em var(--ff2);
+    --h2: bold clamp(1.75rem, 1.4rem + 1.7500000000000002vw, 3.5rem)/1.2em var(--ff2);
+    --h3: bold clamp(1.5rem, 1.2rem + 1.5vw, 3rem)/1.2em var(--ff2);
+    --h4: bold clamp(1.25rem, 1rem + 1.25vw, 2.5rem)/1.6em var(--ff2);
 }
 
-html, body{
-    height: 100%;
-}
 body{
     background-color: var(--fondo);
 }
