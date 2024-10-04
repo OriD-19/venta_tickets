@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+*{
+    padding:0;
+    margin: 0;
+}
+
+:root{
+    --fondo: #02020e;
+    --titulo: #ffff;
+    --encabezado: #720605;
+    --titulo2: #E6AF2E;
+    --fuente1: "Outfit", sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --fuente3: "Poiret One", sans-serif;
+}
+
+body{
+    background-color: var(--fondo);
+}
+
+h1, h2, h3, p{
+    font-family: 'Outfit', sans-serif;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-family: var(--fuente3);
+    font-size: 2.7em;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-family: var(--fuente2);
+}
+
+p, li {
+    font-size: 1.25em;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*Da estilo a los botones*/
+.button{
+    font-size: 1.25em;
+    font-weight: bold;
+    color: white;
+    background-color: var(--encabezado);
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px auto;
+    display: inline-block;
+}
+
+/*Pone orden al encabezado donde ira la imagen del contenido*/
+#encabezado2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 80vh;
+    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/concierto2.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#encabezado2 h1{
+    color: white;
+    font-size: 5em;
+}
+
+/*Ayuda a alinear las cajas dentro del container*/
+#nuestros-paquetes{
+    background-color: var(--fondo);
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+}
+
+#nuestros-paquetes.container{
+    padding: 50px 12px;
+}
+
+#nuestros-paquetes .paquetes{
+    margin: auto;
+}
+
+#nuestros-paquetes .paquetes ul{
+    text-align: justify;
+}
+
+#nuestros-paquetes .card{
+    padding: 40px 0px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#nuestros-paquetes .card div {
+    display: flex;
+    flex-direction: column;
+}
+
+#nuestros-paquetes .card div h3, ul{
+    margin: 0 10%;
+}
+
+#nuestros-paquetes .card img{
+    width: 30%;
+    height: 20%;
+}
+
+#nuestros-paquetes .card p{
+    display: block ;
+    padding: 0px 20px; 
+}
+
+/*PA CELULAR*/
+@media (min-width: 640px) {
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+
+}
+
+@media screen and (min-width: 769px) {
+   
+}
