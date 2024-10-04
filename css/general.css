@@ -48,7 +48,6 @@ body{
 
 nav{
     width: 100%;
-    position: sticky;
     top: 0;
     z-index: 10;
     background-color: var(--titulo);
@@ -94,6 +93,7 @@ h1, p{
     font-size: 2.2vw;
     color: var(--fondo);
     font-style: italic;
+    font-style: italic;
 }
 
 
@@ -103,6 +103,10 @@ footer{
     font-family: var(--fuente);
     height: 5vw;
     position: fixed;
+    font-family: var(--fuente1);
+    height: 5vw;
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
 
@@ -115,7 +119,7 @@ footer p{
 }
 
 h1{
-    font-family: var(--fuente);
+    font-family: var(--fuente1);
     color: var(--titulo);
     font-weight: bold;
 }
