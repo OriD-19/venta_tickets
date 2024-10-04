@@ -3,6 +3,7 @@
 *{
     padding:0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 :root{
@@ -85,7 +86,7 @@ p, li {
     padding-top: 40px;
 }
 
-#nuestros-paquetes.container{
+#nuestros-paquetes .container{
     padding: 50px 12px;
 }
 
@@ -99,26 +100,28 @@ p, li {
 
 #nuestros-paquetes .card{
     padding: 40px 0px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
-    flex-direction: row;
-
+    justify-content: space-around;
 }
 
 #nuestros-paquetes .card div {
     display: flex;
     flex-direction: column;
+    width: 40%;
 }
 
-#nuestros-paquetes .card div h3, ul{
+#nuestros-paquetes .card div h3 {
+    margin-bottom: 2rem;
+}
+
+#nuestros-paquetes .card div h3 ul{
     margin: 0 10%;
 }
 
 #nuestros-paquetes .card img{
-    width: 30%;
-    height: 20%;
+    width: 40%;
+    height: auto;
+    align-self: center;
 }
 
 #nuestros-paquetes .card p{
