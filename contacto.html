@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <title>Formulario de Contacto</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="img/Logo-venta tickets.png" alt="logo" id="logo">
+            <div class="items">
+                <span>
+                    <a href="inicio.html">Inicio</a>
+                </span>
+                <span>
+                    <a href="Destacados.html">Eventos</a>
+                </span>
+                <span>
+                    <a href="#">Calendario</a>
+                </span>
+                <span>
+                    <a href="#">Ofertas</a>
+                </span>
+                <span>
+                    <a href="acerca.html">Acerca de</a>
+                </span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="banner">
+        <h1>¡Ponte en contacto con nosotros!</h1><br>
+        <p>Estamos aquí para ayudarte. Completa el formulario y te responderemos pronto</p>
+    </section>
+
+    <div class="form-container">
+
+        <div class="imagen-form">
+            <img src="img/Logo-venta tickets.png" alt="Imagen de contacto" />
+        </div>
+
+        <div class="form-contacto">
+            <form action="#" method="post">
+                <fieldset id="datos">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" value="" pattern="^[a-zA-Z\s]+$" title="Solo letras"
+                        class="control" required />
+
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" value="" pattern="^[67][0-9]{3}-?[0-9]{4}"
+                        title="El número debe empezar con 7 o 6 (7777-7777)" class="control" required />
+
+                    <label for="email">Correo</label>
+                    <input type="email" id="correo" value="" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Formato aceptado: CorreoElectronico@dominio"
+                        class="control" required />
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea name="mensaje" rows="8" cols="30"></textarea>
+
+                    <button class="button">Enviar mensaje</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            &copy; Stars. Todos los derechos reservados
+        </p>
+    </footer>
+
+
+</body>
+
+</html>
