@@ -52,7 +52,7 @@ p, li {
     font-size: 1.25em;
     font-weight: bold;
     color: white;
-    background-color: var(--encabezado);
+    background-color: var(--encabezado); 
     padding: 10px 30px;
     text-decoration: none;
     border-radius: 5px;
@@ -108,6 +108,10 @@ p, li {
     display: flex;
     flex-direction: column;
     width: 40%;
+}
+
+#nuestros-paquetes .card div h3 {
+    margin-bottom: 2rem;
 }
 
 #nuestros-paquetes .card div h3 {
