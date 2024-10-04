@@ -1,0 +1,109 @@
+:root{
+    --fondo: #02020e;
+    --titulo: #fff;
+    --encabezado: #720605;
+
+    /* escala de grises, para sombras y colores oscuros */
+    --gray90: hsl(0, 0%, 90%);
+    --gray80: hsl(0, 0%, 80%);
+    --gray70: hsl(0, 0%, 70%);
+    --gray60: hsl(0, 0%, 60%);
+    --gray10: hsl(0, 0%, 10%);
+    --gray5: hsl(0, 0%, 5%);
+
+    --especial1: #d11613;
+    --especial2: #E6AF2E;
+
+    /* Espaciado, para definir margenes y padding estandares */
+    --xxs: .25rem;
+    --xs: .5rem;
+    --s: .75rem;
+    --m: 1rem;
+    --l: 1.25rem;
+    --xl: 1.75rem;
+    --xxl: 2.5rem;
+
+    /* estilos de fuentes */
+    /* clamp() sirve para definir tamaños de fuente fluidos segun el viewport */
+    /* herramienta utilizada: https://royalfig.github.io/fluid-typography-calculator/ */
+    --fuente: "Outfit", sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --fuente3: "Poiret One", sans-serif;
+    --h1: bold clamp(2rem, 1.6rem + 2vw, 4rem)/1em var(--fuente);
+    --h2: bold clamp(1.75rem, 1.4rem + 1.7500000000000002vw, 3.5rem)/1.2em var(--fuente);
+    --h3: bold clamp(1.5rem, 1.2rem + 1.5vw, 3rem)/1.2em var(--fuente);
+    --h4: bold clamp(1.25rem, 1rem + 1.25vw, 2.5rem)/1.6em var(--fuente);
+}
+
+.encabezado {
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("../img/feid.webp");
+    background-size: cover;
+    background-position: center;
+    height: 15rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.encabezado h1 {
+    text-align: center;
+    margin: auto auto;
+}
+
+.encabezado h1 span {
+    font-size: 1rem;
+    color: var(--gray60);
+    display: block;
+}
+
+* {
+    color: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    font-size: clamp(2rem, 1.6rem + 2vw, 4rem);
+    font-family: var(--fuente);
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    font: var(--h2);
+    text-align: center;
+    font-weight: normal;
+}
+
+h3 {
+    font: var(--h3);
+}
+
+h4 {
+    font: var(--h4);
+    color: var(--gray70);
+    line-height: 1em;
+}
+
+fieldset.general {
+    border: none;
+    background: linear-gradient(135deg, var(--gray10), var(--gray5));
+    padding: var(--l);
+    width: 90%;
+    margin: var(--l) auto;
+    border-radius: 10px;
+}
+
+fieldset.general legend {
+    font: var(--h4);
+}
+
+input {
+    color: black;
+}
+
