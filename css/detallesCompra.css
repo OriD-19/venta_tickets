@@ -1,6 +1,5 @@
 :root{
     --fondo: #02020e;
-    --titulo: #fff;
     --encabezado: #720605;
 
     /* Escala de grises, para sombras y colores oscuros */
@@ -181,6 +180,23 @@ form input[type="submit"] {
     padding: var(--s);
     border-radius: var(--xs);
     cursor: pointer;
+}
+
+footer {
+    position: static;
+}
+
+/* Codigo cortesia de https://stackoverflow.com/a/40189766  */
+
+form input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+form input[type="number"]::-webkit-inner-spin-button,
+form input[type="number"]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
 }
 
 @media (width >= 481px) {

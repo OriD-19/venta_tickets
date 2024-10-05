@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-@import url('general.css');
 
 :root{
 --gray10: hsl(0, 0%, 10%);
@@ -72,6 +71,7 @@ section.eventos-populares article h3{
 section.eventos-populares article a.button{
 width: 30vw;
 margin: 3vw auto;
+    padding: 1rem;
 }
 
 section.eventos-populares article div.Content-Events{

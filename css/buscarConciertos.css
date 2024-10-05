@@ -1,6 +1,6 @@
 :root{
     --fondo: #02020e;
-    --titulo: #fff;
+    --titulo: #e8e5de;
     --encabezado: #720605;
 
     /* escala de grises, para sombras y colores oscuros */
@@ -41,6 +41,10 @@ html {
 
 * {
     color: white;
+}
+
+nav {
+    position: sticky;
 }
 
 img {
@@ -208,6 +212,7 @@ option {
 .card a:hover {
     background-color: var(--especial1);
 }
+
 
 
 @media (width >= 481px) {
