@@ -1,4 +1,6 @@
-import { registerUser, loginUser } from "./firebase.js";
+import { registerUser, loginUser } from "./config.js";
+
+//registerUser("fernandocastillo.8@hotmail.com", "123456", "Fernando", "Fuentes", "admin");
 
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
