@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Conciertos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/empleado.css">
+
 </head>
+
 <body>
-    <nav>
-        <img src="../img/logo-venta tickets.png" alt="logo" id="logo">
-            <label for="menu" tabindex="0">
-                <i class="fa-solid fa-bars fa-2x"></i>
-            </label>
-        <input type="checkbox" id="menu">
-        <div class="items">
-            <span>
-                <a href="../index.html">Inicio</a>
-            </span>
-            <span>
-                <a href="../destacados.html">Eventos</a>
-            </span>
-            <span>
-                <a href="../buscarConciertos.html">Calendario</a>
-            </span>
-            <span>
-                <a href="../paquetes.html">Paquetes</a>
-            </span>
-            <span>
-                <a href="../acerca.html">Acerca de</a>
-            </span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="../img/logo-venta tickets.png" alt="logo" id="logo" class="img-fluid" style="max-width: 90px;">
+        </a>
+        <label for="menu" tabindex="0" class="d-lg-none">
+            <i class="fa-solid fa-bars fa-2x"></i>
+        </label>
+        <input type="checkbox" id="menu" class="d-lg-none">
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./eventos.html">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./empleado.html">Agregar Evento</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -61,10 +57,14 @@
                 <label for="precio">Precio del Boleto</label>
                 <input type="number" class="form-control" id="precio_boleto" placeholder="Precio por boleto" required>
             </div>
-            <button type="submit" class="button">Guardar Concierto</button>
+            <button type="submit" class="btn btn-primary">Guardar Concierto</button>
         </form>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./js/agregar_concierto.js"></script>
 </body>
+
 </html>
