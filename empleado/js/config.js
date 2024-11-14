@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -30,7 +30,7 @@ export const guardarConcierto = async (artista, descripcion, fecha, lugar, local
             urlImagen
         });
         alert("Concierto registrado correctamente.")
-    } catch (error){
+    } catch (error) {
         alert("Error al guardar el concierto: ", error);
     }
 }
@@ -51,5 +51,17 @@ export const mostrarConciertos = async () => {
         return []; //si no se pueden obtener los registros, se regresa un arreglo vacío
     }
 }
+
+export const eliminarConcierto = async (idConcierto) => {
+    try {
+        await deleteDoc(doc(db, "conciertos", idConcierto));
+        alert("Se eliminó el concierto")
+
+    } catch (error) {
+        console.log(error);
+        alert("No se pudo eliminar el concierto.")
+    }
+}
+
 
 //créditos: https://www.youtube.com/watch?v=ey4k6mW9ds4&t=1341s

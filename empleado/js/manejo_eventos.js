@@ -1,4 +1,4 @@
-import { mostrarConciertos } from "./config.js";
+import { mostrarConciertos, eliminarConcierto } from "./config.js";
 
     document.addEventListener("DOMContentLoaded", () => {
         const contenedorCartas = document.getElementById("eventosContainer");
@@ -27,12 +27,27 @@ import { mostrarConciertos } from "./config.js";
                                 <p class="card-text">Localidades: ${concierto.localidades}</p>                    
                                 <p class="card-text">Fecha: ${new Date(concierto.fecha).toLocaleDateString()}</p>
                                 <p class="card-text">Precio: $${concierto.precio}</p>
-                                <a href="detallesCompra.html" class="btn btn-light mt-2">Más info</a>
-                                <button class="btn btn-danger mt-2 eliminar-btn">Eliminar</button>
-                                <button class="btn btn-warning mt-2 editar-btn">Editar</button>
+                                <button class="btn btn-danger mt-2 eliminar-btn" data-id="${concierto.id}">Eliminar</button>
+                                <button class="btn btn-warning mt-2 editar-btn" data-id="${concierto.id}">Editar</button>
                             </div>
                         </div>
                     `;
+                    const eliminarBtn = conciertoCard.querySelector(".eliminar-btn");
+                    eliminarBtn.addEventListener("click", async () => {
+                        const confirmación = confirm("¿Quieres eliminar el concierto?");
+                        if (confirmación) {
+                            await eliminarConcierto(concierto.id);
+                            window.location.reload();
+                        }
+                    })
+
+                    const modificarBtn = conciertoCard.querySelector(".editar-btn")
+                    modificarBtn.addEventListener("click", async () => {
+                        alert(`Hola ${concierto.artista}`)
+
+                    })
+
+
                     contenedorCartas.appendChild(conciertoCard);
                 });
             }
