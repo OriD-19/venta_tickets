@@ -1,39 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
 *{
     padding:0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 :root{
     --fondo: #02020e;
-    --titulo: #ffff;
+    --titulo: #e8e5de;
     --encabezado: #720605;
+    --especial1: #E6AF2E;
+    --especial2: #A3320B;
+    --fuente: 'Oufit', sans-serif;
     --titulo2: #E6AF2E;
     --fuente1: "Outfit", sans-serif;
     --fuente2: 'Open Sans', sans-serif;
     --fuente3: "Poiret One", sans-serif;
 }
 
+.button {
+    background-color: var(--especial1);
+    text-align: center;
+    text-decoration: none;
+    color: var(--fondo);
+    font-family: var(--fuente);
+    font-weight: bold;
+    font-size: 1em;
+    display: inline-block;
+    padding: 20px 30px;
+    border-radius: 20px;
+    margin: 20px auto;
+}
+
+.button:hover {
+    background-color: var(--encabezado);
+    color: var(--titulo);
+}
+
 body{
     background-color: var(--fondo);
 }
+
+* {
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.96rem + 0.19999999999999996vw, 1.2rem);
+}
+
+label i {
+    color: black;
+}
+
 
 nav{
     width: 100%;
     top: 0;
     z-index: 10;
     background-color: var(--titulo);
-    height: 15vw;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    position: sticky;
+    top: 0;
 }
+
+/* MENU HAMBURGUESA */
+nav input[type="checkbox"] {
+    display: none;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-basis: 100%;
+}
+
+.items span a {
+    display: block;
+    text-align: right;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    background-color: var(--titulo);
+}
+
+input[type="checkbox"]:not(:checked)+.items {
+    display: none;
+}
+/* FIN MENU HAMBURGUESA */
 
 h2{
     font-family: var(--fuente3);
-    color: var(--titulo2);
+    color: var(--especial1);
     font-size: 8vw;
 }
 
@@ -42,9 +104,8 @@ h3{
     font-family: var(--fuente2);
 }
 
-
 #logo{
-    width: 12vw;
+    width: 18%;
 }
 
 span>a{
@@ -52,31 +113,39 @@ span>a{
     font-family: var(--fuente2);
     color: var(--encabezado);
     font-weight: bolder;
-    font-size: 3vw;
+    font-size: 1rem;
     padding: 4px;
 }
 
 span>a:hover{
-    font-size: 3vw;
-    color: var(--fondo);
-    font-style: italic;
+    color: var(--especial2);
+    text-decoration: underline;
+}
 
+h1, p{
+    color: var(--titulo);
+    font-family: var(--ff2);
+    color: var(--fondo);
 }
 
 
 footer{
     background-color: var(--titulo);
     bottom: 0;
+    font-family: var(--fuente);
+    position: fixed;
     font-family: var(--fuente1);
-    height: 5vw;
     position: fixed;
     bottom: 0;
     width: 100%;
+    padding: 1rem;
 }
 
 footer p{
-    font-size: 2vw;
+    font-size: 1rem;
     text-align: center;
+    padding-top: 0.8vw;
+    color: var(--encabezado);
     padding-top: 0.7vw;
 }
 
@@ -88,25 +157,18 @@ h1{
 
 
 @media screen and (min-width: 481px) and (max-width: 768px){
-    nav{
-        height: 6vw;
+
+    nav {
+        height: 7rem;
     }
 
     #logo{
-        width: 6vw;
+        width: 15%;
     }
 
-    span>a{
-        padding: 10px;
-        font-size: 2vw;
-    }
     footer{
-        height: 3vw;
         position: static;
         bottom: 0;
-    }
-    footer p{
-        font-size: 1.3vw;
     }
 
    }
@@ -114,12 +176,39 @@ h1{
 
 
 @media screen and (min-width: 769px) {
-    nav{
-        height: 5.5vw;
+
+    #logo {
+        width: 7%;
     }
 
-    #logo{
-        width: 6vw;
+    input[type="checkbox"]:not(:checked)+.items {
+        display: block;
+    }
+
+    .items {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        flex-basis: auto;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+
+    .items span {
+        width: auto;
+    }
+
+    .items span a {
+        display: inline;
+    }
+
+    nav label, nav input[type="checkbox"] {
+        display: none;
     }
 
     span>a{
@@ -127,13 +216,7 @@ h1{
         font-size: 2vw;
     }
     footer{
-        height: 3vw;
         position: static;
         bottom: 0;
     }
-
-    footer p{
-        font-size: 1.3vw;
-    }
-
    }

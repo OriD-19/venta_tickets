@@ -4,18 +4,8 @@
     padding:0;
     margin: 0;
     box-sizing: border-box;
-    box-sizing: border-box;
 }
 
-:root{
-    --fondo: #02020e;
-    --titulo: #ffff;
-    --encabezado: #720605;
-    --titulo2: #E6AF2E;
-    --fuente1: "Outfit", sans-serif;
-    --fuente2: 'Open Sans', sans-serif;
-    --fuente3: "Poiret One", sans-serif;
-}
 
 body{
     background-color: var(--fondo);
@@ -54,10 +44,10 @@ p, li {
     font-weight: bold;
     color: white;
     background-color: var(--encabezado); 
-    padding: 10px 30px;
+    padding: 1.2rem;
     text-decoration: none;
-    border-radius: 5px;
-    margin: 20px auto;
+    border-radius: 1rem;
+    margin: 30px auto;
     display: inline-block;
 }
 
@@ -87,7 +77,6 @@ p, li {
     padding-top: 40px;
 }
 
-
 #nuestros-paquetes .container{
     padding: 50px 12px;
 }
@@ -103,7 +92,6 @@ p, li {
 #nuestros-paquetes .card{
     padding: 40px 0px;
     display: flex;
-    justify-content: space-around;
     justify-content: space-around;
 }
 
@@ -122,9 +110,10 @@ p, li {
     margin-bottom: 2rem;
 }
 
-
-#nuestros-paquetes .card div h3 ul{
+#nuestros-paquetes .card div h3+ul{
     margin: 0 10%;
+    text-align: left;
+    font-family: var(--fuente1);
 }
 
 #nuestros-paquetes .card img{
