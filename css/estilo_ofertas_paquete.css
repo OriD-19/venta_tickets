@@ -6,13 +6,6 @@
 }
 
 :root{
-    --fondo: #02020e;
-    --titulo: #ffff;
-    --encabezado: #720605;
-    --titulo2: #E6AF2E;
-    --fuente1: "Outfit", sans-serif;
-    --fuente2: 'Open Sans', sans-serif;
-    --fuente3: "Poiret One", sans-serif;
     --gray10: hsl(0, 0%, 10%);
     --gray5: hsl(0, 0%, 5%);
 }
@@ -48,8 +41,19 @@ p, li {
     margin: 0 auto;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card p {
+    margin-bottom: 3rem;
+}
+
+
 /*Da estilo a los botones*/
-.button{
+.card .button {
     font-size: 1.25em;
     font-weight: bold;
     color: white;
@@ -57,8 +61,10 @@ p, li {
     padding: 10px 30px;
     text-decoration: none;
     border-radius: 5px;
-    margin: 20px auto;
+    margin-top: auto;
     display: inline-block;
+    width: auto;
+    height: auto;
 }
 
 /*Pone orden al encabezado donde ira la imagen del contenido*/
@@ -76,7 +82,7 @@ p, li {
 
 #encabezado h1{
     color: white;
-    font-size: 5em;
+    font-size: 3rem;
 }
 
 /*Ayuda a alinear las cajas dentro del container*/
@@ -98,9 +104,16 @@ p, li {
     border-radius: 10px;
 }
 
+#nuestras-ofertas .card h3 {
+    margin-bottom: 1rem;
+}
+
 #nuestras-ofertas .card p{
     display: none;
+    line-height: 1.2em;
+    text-align: left;
     padding: 0px 30px;
+    color: white;
 }
 
 /*Pone orden al encabezado donde ira la imagen del contenido*/
@@ -118,7 +131,7 @@ p, li {
 
 #encabezado2 h1{
     color: white;
-    font-size: 5em;
+    font-size: 3em;
 }
 
 /*Ayuda a alinear las cajas dentro del container*/
@@ -129,7 +142,7 @@ p, li {
     padding-top: 40px;
 }
 
-#nuestros-paquetes.container{
+#nuestros-paquetes .container{
     padding: 50px 12px;
 }
 
@@ -143,6 +156,17 @@ p, li {
 #nuestros-paquetes .card ul{
     display: none;
     padding: 0px 30px;
+    list-style-position: inside;
+    font-family: var(--fuente1);
+    text-align: left;
+}
+
+#nuestros-paquetes .card ul li {
+    margin: 0.8rem 0;
+}
+
+#nuestros-paquetes .card h3 {
+    margin-bottom: 1rem;
 }
 
 /*PA CELULAR*/
@@ -163,7 +187,7 @@ p, li {
     }
     #nuestras-ofertas .card p{
         display: none; 
-        text-align: justify;
+        text-align: left;
     }
 
     #nuestras-ofertas .ofertas{
@@ -184,7 +208,7 @@ p, li {
     }
     #nuestros-paquetes .card p{
         display: none; 
-        text-align: justify;
+        text-align: left;
 
     }
 
@@ -207,9 +231,12 @@ p, li {
         padding: 20px;
         margin: 20px 10px;
     }
+
     #nuestras-ofertas .card p{
-        display: block; 
-        text-align: justify;
+        display: block;
+        text-align: left;
+        padding: 0px 30px;
+        color: white;
     }
 
     #nuestras-ofertas .ofertas{
@@ -221,6 +248,7 @@ p, li {
         flex-direction: row; 
         justify-content: space-around;
     }
+
     #nuestros-paquetes .card{
         width: 30%; 
         padding: 20px;
@@ -228,7 +256,7 @@ p, li {
     }
     #nuestros-paquetes .card ul{
         display: block; 
-        text-align: justify;
+        text-align: left;
 
     }
 

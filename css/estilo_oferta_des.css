@@ -6,16 +6,6 @@
     box-sizing: border-box;
 }
 
-:root{
-    --fondo: #02020e;
-    --titulo: #ffff;
-    --encabezado: #720605;
-    --titulo2: #E6AF2E;
-    --fuente1: "Outfit", sans-serif;
-    --fuente2: 'Open Sans', sans-serif;
-    --fuente3: "Poiret One", sans-serif;
-}
-
 body{
     background-color: var(--fondo);
 }
@@ -53,9 +43,9 @@ p, li {
     font-weight: bold;
     color: white;
     background-color: var(--encabezado);
-    padding: 10px 30px;
+    padding: 1.3rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 1rem;
     margin: 20px auto;
     display: inline-block;
 }
@@ -79,7 +69,7 @@ p, li {
 
 #encabezado h1{
     color: white;
-    font-size: 5em;
+    font-size: 3rem;
 }
 
 /*Ayuda a alinear las cajas dentro del container*/
@@ -99,6 +89,7 @@ p, li {
 }
 
 #nuestras-ofertas .ofertas p{
+    color: white;
     text-align: justify;
 }
 
@@ -106,6 +97,7 @@ p, li {
     padding: 40px 0px;
     display: flex;
     justify-content: space-around;
+    color: white;
 }
 
 #nuestras-ofertas .card div {
@@ -132,7 +124,8 @@ p, li {
 
 #nuestras-ofertas .card p{
     display: block ;
-    padding: 0px 20px; 
+    padding: 0px 20px;
+    color: white;
 }
 
 /*PA CELULAR*/
