@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+:root{
+    --fondo: #02020e;
+    --titulo: #e8e5de;
+    --encabezado: #720605;
+    --especial1: #E6AF2E;
+    --especial2: #A3320B;
+    --fuente: 'Oufit', sans-serif;
+    --titulo2: #E6AF2E;
+    --fuente1: "Outfit", sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --fuente3: "Poiret One", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--fondo);
+}
+
+h1, h2, h3, label{
+    font-family: 'Outfit', sans-serif;
+}
+
+p{
+    color: var(--titulo);
+    font-family: var(--ff2);
+    color: var(--fondo);
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-family: var(--fuente3);
+    font-size: 2.7em;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-family: var(--fuente2);
+}
+
+.button {
+    background-color: var(--encabezado);
+    text-align: center;
+    text-decoration: none;
+    color: var(--titulo);
+    font-family: var(--fuente);
+    font-weight: bold;
+    font-size: 0.65em;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.button:hover {
+    background-color: var(--especial1);
+    color: var(--fondo);
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .button{
+        font-size: 0.8em;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .button{
+        font-size: 0.8em;
+        padding: 10px 20px;
+    }
+}
