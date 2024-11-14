@@ -1,5 +1,7 @@
 import { mostrarConciertos, eliminarConcierto } from "./config.js";
 
+const modal = new bootstrap.Modal(document.getElementById("editConciertoModal"), {});
+
     document.addEventListener("DOMContentLoaded", () => {
         const contenedorCartas = document.getElementById("eventosContainer");
 
@@ -43,10 +45,8 @@ import { mostrarConciertos, eliminarConcierto } from "./config.js";
 
                     const modificarBtn = conciertoCard.querySelector(".editar-btn")
                     modificarBtn.addEventListener("click", async () => {
-                        alert(`Hola ${concierto.artista}`)
-
+                        modal.show();
                     })
-
 
                     contenedorCartas.appendChild(conciertoCard);
                 });
