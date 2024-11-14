@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos destacados</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="./css/eventos_empleado.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 0 190px;">
         <a class="navbar-brand" href="#">
             <img src="../img/logo-venta tickets.png" alt="logo" id="logo" class="img-fluid" style="max-width: 90px;">
         </a>
@@ -21,24 +21,30 @@
         <div class="navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="./inicio_empleado.html">Inicio</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="./eventos.html">Eventos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./empleado.html">Agregar Evento</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Log Out</a>
+                </li>
             </ul>
         </div>
     </nav>
 
-        <!--Acá se agregaran las cartas de la base de datos-->
-<section class="container mt-5">
-    <div class="row" id="eventosContainer">
-    </div>
-</section>
+    <!--Acá se agregaran las cartas de la base de datos-->
+    <section class="container mt-5">
+        <div class="row" id="eventosContainer">
+        </div>
+    </section>
 
 
     <footer>
-        <p>
+        <p style="text-align: center;">
             &copy; Stars. Todos los derechos reservados
         </p>
     </footer>

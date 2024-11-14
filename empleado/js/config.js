@@ -47,7 +47,7 @@ export const mostrarConciertos = async () => {
         });
         return listaConciertos;
     } catch (error) {
-        alert("Error al obtener los concierts", error)
+        alert("Error al obtener los conciertos", error)
         return []; //si no se pueden obtener los registros, se regresa un arreglo vacío
     }
 }

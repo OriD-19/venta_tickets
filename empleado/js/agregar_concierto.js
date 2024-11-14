@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const precio = document.getElementById("precio_boleto").value;
         const imagen = document.getElementById("url_imagen").value;
         guardarConcierto(artista, descripcion, fecha, lugar, localidades, precio, imagen);
-        form.reset();
+        form.reset(); 
     });
 });
-
