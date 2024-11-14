@@ -1,5 +1,6 @@
 import { mostrarConciertos, eliminarConcierto } from "./config.js";
 
+/*Define el modal para mandarlo a llamar*/
 const modal = new bootstrap.Modal(document.getElementById("editConciertoModal"), {});
 
     document.addEventListener("DOMContentLoaded", () => {
