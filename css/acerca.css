@@ -21,6 +21,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 2rem;
 }
 
 h1 {
@@ -53,6 +54,10 @@ p {
     font-family: var(--fuente2);
     font-size: 1.2em;
     padding: 2%;
+}
+
+footer p {
+    padding: 0;
 }
 
 p a {

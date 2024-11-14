@@ -1,0 +1,127 @@
+<!DOCTYPE html> <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Comprar tickets</title>
+        <link href="css/general.css" rel="stylesheet">
+        <link href="css/detallesCompra.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <img src="./img/logo-venta tickets.png" alt="logo" id="logo">
+                <label for="menu" tabindex="0">
+                    <i class="fa-solid fa-bars fa-2x"></i>
+                </label>
+            <input type="checkbox" id="menu">
+            <div class="items">
+                <span>
+                    <a href="index.html">Inicio</a>
+                </span>
+                <span>
+                    <a href="Destacados.html">Eventos</a>
+                </span>
+                <span>
+                    <a href="buscarConciertos.html">Calendario</a>
+                </span>
+                <span>
+                    <a href="paquetes.html">Paquetes</a>
+                </span>
+                <span>
+                    <a href="acerca.html">Acerca de</a>
+                </span>
+            </div>
+        </nav>
+         
+        <!-- Contenido principal -->
+
+        <main>
+            <div class="encabezado">
+                <h1><span>Comprar boletos:</span>Ferxxocalipsis World Tour</h1> 
+            </div>
+
+            <form action="comprar_boletos.php">
+                <fieldset class="general">
+                    <legend>Datos generales</legend>
+
+                    <label for="nombre">Nombre</label>
+                    <input type="text" pattern="[^\d]*">
+
+                    <label for="apellido">Apellido</label>
+                    <input type="text" pattern="[^\d]*">
+
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" />
+
+                    <label for="dui">DUI</label>
+                    <input type="text" pattern="[0-9]{9}" />
+
+                </fieldset> 
+
+                <fieldset class="info_tickets">
+                    <legend>Tickets</legend>
+                    
+                    <label for="ubicacion">Ubicacion</label>
+                    <select name="ubicacion" id="ubicacion">
+                        <option value="platinum">Platinum $115</option>
+                        <option value="vipl">VIP $65</option>
+                        <option value="trib_baja">Tribuna Baja $45</option>
+                        <option value="trib_alta">Tribuna Alta $35</option>
+                        <option value="general">General $20</option>
+                    </select>
+
+                    <label for="paquete">Paquete Adicional</label>
+                    <select name="paquete" id="paquete">
+                        <option value="ninguno">Ninguno</option>
+                        <option value="p_vip">Paquete VIP</option>
+                        <option value="golden_circle">Paquete Golden Circle</option>
+                        <option value="super_fan">Paquete Super Fan</option>
+                    </select>
+
+                    <img src="img/venta_tickets.jpg" alt="Distribucion de los asientos durante el concierto">
+
+
+                </fieldset>
+
+                <fieldset class="metodo_pago">
+                    <legend>Método de pago</legend>
+
+                    <div class="tarjetas">
+                        <img src="img/visa.png" alt="Visa">
+                        <img src="img/mastercard.webp" alt="MasterCard">
+                    </div>
+
+                    <label for="num_tarjeta">Número de tarjeta</label>
+                    <input type="text" pattern="[0-9]{16}">
+
+                    <label for="nombre">Nombre del titular</label>
+                    <input type="text" pattern="[^\d]*">
+
+                    <div class="exp_cvv">
+                        <div>
+                            <label for="fecha_exp">Vence</label>
+                            <input type="date">
+                        </div>
+
+                        <div>
+                            <label for="cvv">CVV</label>
+                            <input type="number" min="100" max="999">
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <h3>Total: $115.00</h3>
+
+                <input type="submit" value="Comprar">
+            </form>
+        </main>
+
+        <!-- Contenido principal -->
+
+    <footer>
+        <p>
+            &copy; Stars. Todos los derechos reservados
+        </p>
+    </footer>
+    </body>
+</html>

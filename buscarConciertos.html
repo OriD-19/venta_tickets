@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Buscar Conciertos</title>
+        <link href="css/general.css" rel="stylesheet">
+        <link href="css/buscarConciertos.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <img src="./img/logo-venta tickets.png" alt="logo" id="logo">
+                <label for="menu" tabindex="0">
+                    <i class="fa-solid fa-bars fa-2x"></i>
+                </label>
+            <input type="checkbox" id="menu">
+            <div class="items">
+                <span>
+                    <a href="index.html">Inicio</a>
+                </span>
+                <span>
+                    <a href="destacados.html">Eventos</a>
+                </span>
+                <span>
+                    <a href="buscarconciertos.html">Calendario</a>
+                </span>
+                <span>
+                    <a href="paquetes.html">Paquetes</a>
+                </span>
+                <span>
+                    <a href="acerca.html">Acerca de</a>
+                </span>
+            </div>
+        </nav>
+        <!-- Contenido principal -->
+
+
+        <main>
+            <h1>Buscar conciertos</h1>
+            <form action="buscar_concierto.php">
+                <h2>Encontrar eventos cercanos</h2>
+                <div class="form_control">
+                    <label for="tipo_evento">
+                        <h3>Tipo de evento</h3>
+                    </label>
+                    <select name="tipo_evento" id="tipo_evento">
+                        <option value="concierto">Concierto</option>
+                        <option value="partido">Partido</option>
+                        <option value="vainas">Otros</option>
+                    </select>
+                </div>
+
+                <div class="form_control">
+                    <h3>Fecha</h3>
+                    <div class="select_fechas">
+                        <div>
+                            <label for="fecha_desde">
+                                <h4>Desde</h4>
+                            </label>
+                            <input type="date" name="fecha_desde" id="fecha_desde">
+                        </div>
+                        <div>
+                            <label for="fecha_hasta">
+                                <h4>Hasta</h4>
+                            </label>
+                            <input type="date" name="fecha_hasta" id="fecha_hasta">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form_control">
+                    <label for="lugar_evento">
+                        <h3>Lugar</h3>
+                    </label>
+                    <select name="lugar_evento" id="lugar_evento">
+                        <option value="cusca">Estadio Cuscatlán</option>
+                        <option value="teatro">Teatro Nacional</option>
+                        <option value="salamanca">Salamanca Centros y convenciones</option>
+                        <option value="otros">Otros</option>
+                    </select>
+
+                </div>
+
+                <input type="submit" value="Buscar">
+            </form>
+
+            <div class="resultados">
+                <h2>Resultados</h2>
+
+                <div class="card_container">
+
+                    <div class="card">
+                        <div class="image">
+                        </div>
+
+                        <div class="card_content">
+                            <h4>Ximena Sariñana</h4>
+                            <p>Lugar: Estadio Cuscatlán</p>
+                            <p>Hora: 7:00 PM</p>
+                            <p>Fecha: 18 de octubre</p>
+                            <a href="detallesCompra.html">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="image">
+                        </div>
+                        <div class="card_content">
+                            <h4>Ferxxocalipsis World Tour</h4>
+                            <p>Lugar: Estadio Cuscatlán</p>
+                            <p>Hora: 9:00 PM</p>
+                            <p>Fecha: 25 de octubre</p>
+                            <a href="detallesCompra.html">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="image">
+                        </div>
+                        <div class="card_content">
+                            <h4>Fred again..</h4>
+                            <p>Lugar: Estadio Cuscatlán</p>
+                            <p>Hora: 9:30 PM</p>
+                            <p>Fecha: 30 de octubre</p>
+                            <a href="detallesCompra.html">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+
+        <!-- Contenido principal -->
+
+    <footer>
+        <p>
+            &copy; Stars. Todos los derechos reservados
+        </p>
+    </footer>
+    </body>
+</html>

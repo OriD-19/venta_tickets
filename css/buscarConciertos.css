@@ -1,0 +1,305 @@
+:root{
+    --fondo: #02020e;
+    --titulo: #e8e5de;
+    --encabezado: #720605;
+
+    /* escala de grises, para sombras y colores oscuros */
+    --gray90: hsl(0, 0%, 90%);
+    --gray80: hsl(0, 0%, 80%);
+    --gray70: hsl(0, 0%, 70%);
+    --gray60: hsl(0, 0%, 60%);
+    --gray10: hsl(0, 0%, 10%);
+    --gray5: hsl(0, 0%, 5%);
+
+    --especial1: #d11613;
+    --especial2: #E6AF2E;
+
+    /* Espaciado, para definir margenes y padding estandares */
+    --xxs: .25rem;
+    --xs: .5rem;
+    --s: .75rem;
+    --m: 1rem;
+    --l: 1.25rem;
+    --xl: 1.75rem;
+    --xxl: 2.5rem;
+
+    /* estilos de fuentes */
+    /* clamp() sirve para definir tamaños de fuente fluidos segun el viewport */
+    /* herramienta utilizada: https://royalfig.github.io/fluid-typography-calculator/ */
+    --fuente: "Outfit", sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --fuente3: "Poiret One", sans-serif;
+    --h1: bold clamp(2rem, 1.6rem + 2vw, 4rem)/1em var(--fuente);
+    --h2: bold clamp(1.75rem, 1.4rem + 1.7500000000000002vw, 3.5rem)/1.2em var(--fuente);
+    --h3: bold clamp(1.5rem, 1.2rem + 1.5vw, 3rem)/1.2em var(--fuente);
+    --h4: bold clamp(1.25rem, 1rem + 1.25vw, 2.5rem)/1.6em var(--fuente);
+}
+
+html {
+    background-color: var(--fondo);
+}
+
+* {
+    color: white;
+}
+
+nav {
+    position: sticky;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    font-size: clamp(2rem, 1.6rem + 2vw, 4rem);
+    font-family: var(--fuente);
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    font: var(--h2);
+    text-align: center;
+    font-weight: normal;
+}
+
+h3 {
+    font: var(--h3);
+}
+
+h4 {
+    font: var(--h4);
+    color: var(--gray70);
+    line-height: 1em;
+}
+
+main {
+    padding: var(--l);
+}
+
+main form {
+    margin-top: var(--xl);
+    border-radius: 10px;
+    box-shadow: 5px -5px 10px var(--gray10);
+    background: linear-gradient(135deg, var(--gray10), var(--gray5));
+    padding: var(--l);
+}
+
+main form h2 {
+    margin-bottom: var(--xxl);
+}
+
+main form input[type="submit"] {
+    width: auto;
+    margin: 0 auto;
+    display: block;
+    color: white;
+    background-color: var(--especial2);
+    border: none;
+    font: var(--h4);
+    padding: var(--s);
+}
+
+.form_control {
+    margin-bottom: var(--xl);
+}
+
+.form_control select, .form_control input,
+.form_control div input[type="date"] {
+    display: inline-block;
+    width: 100%;
+    padding: var(--xs);
+    color: black;
+    font-size: var(--m);
+}
+
+.form_control input[type="date"]:not(:focus),
+.form_control select:not(:focus){
+    background: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.select_fechas div label h4 {
+    font-weight: normal;
+}
+
+option {
+    color: black;
+}
+
+.form_control label>h3 {
+    margin-bottom: var(--xxs);
+}
+
+.resultados {
+    margin-top: var(--xxl);
+}
+
+.resultados h2 {
+    margin-bottom: var(--l);
+}
+
+.card {
+    border-radius: var(--l);
+    margin: var(--l) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+
+.card .image {
+    border-radius: var(--l);
+    border-radius: var(--l) var(--l) 0 0;
+    height: 15rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+}
+
+.card:nth-child(1) .image {
+    background-image: url("../img/ximena.jpg");
+}
+
+.card:nth-child(2) .image {
+    background-image: url("../img/feid.webp");
+}
+
+.card:nth-child(3) .image {
+    background-image: url("../img/fred_again.webp");
+}
+
+.card .card_content {
+    padding: var(--l);
+    background: linear-gradient(var(--gray10), var(--gray5));
+    height: 60%;
+    border-radius: 0 0 var(--m) var(--m);
+    display: flex;
+    flex-direction: column;
+}
+
+.card h4 {
+    color: white;
+    margin: var(--xs) 0;
+}
+
+.card p {
+    font-family: var(--fuente);
+    color: var(--gray70);
+    line-height: 1.3em;
+}
+
+.card a {
+    border-radius: var(--xs);
+    text-decoration: none;
+    font-family: var(--fuente); 
+    text-align: right;
+    display: inline-block;
+    padding: var(--s);
+    width: auto;
+    margin: var(--s) 0;
+    align-self: flex-end;
+    background-color: black;
+    border: var(--xxs) solid var(--especial1);
+    transition: background-color 0.35s;
+}
+
+.card a:hover {
+    background-color: var(--especial1);
+}
+
+
+
+@media (width >= 481px) {
+
+    main {
+        padding: var(--xl);
+    }
+
+    main form {
+        padding: var(--xl);
+        margin: 0 var(--l);
+    }
+
+    main h1 {
+        margin-bottom: var(--xl);
+    }
+
+    .form_control .select_fechas {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: var(--xl);
+    }
+
+    .form_control .select_fechas div {
+        width: 100%;
+    }
+
+
+}
+
+@media(width >= 769px) {
+
+    main {
+        padding: var(--xxl);
+    }
+
+    main h1 {
+        text-align: left;
+    }
+
+    main form {
+        width: 60%;
+        padding: var(--xxl);
+        margin: 0 auto;
+    }
+
+    .resultados .card_container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
+        gap: var(--xl);
+    }
+
+    .card .card_content {
+        border-radius: 0 0 var(--m) var(--m);
+        padding: var(--xl);
+    }
+
+    .card .image {
+        height: 20rem;
+    }
+
+    .card h4 {
+        color: white;
+        margin-top: 0;
+        margin-bottom: var(--l);
+    }
+
+    main form input[type="submit"] {
+        padding: var(--l);
+    }
+    
+    .card a {
+        margin-top: auto;
+    }
+
+    .form_control {
+        margin-bottom: var(--xxl);
+    }
+
+    .form_control label>h3 {
+        margin-bottom: var(--l);
+    }
+
+    .select_fechas div label h4 {
+        margin-bottom: var(--s);
+    }
+
+}
