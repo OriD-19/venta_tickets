@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/acerca.css">
+    <link rel="stylesheet" href="./css/confirmacionPago.css">
+    <title>Confirmación de Compra</title>
+</head>
+
+<body>
+    <nav>
+        <img src="./img/logo-venta tickets.png" alt="logo" id="logo">
+        <label for="menu" tabindex="0">
+            <i class="fa-solid fa-bars fa-2x"></i>
+        </label>
+        <input type="checkbox" id="menu">
+        <div class="items">
+            <span>
+                <a href="index.html">Inicio</a>
+            </span>
+            <span>
+                <a href="destacados.html">Eventos</a>
+            </span>
+            <span>
+                <a href="buscarconciertos.html">Calendario</a>
+            </span>
+            <span>
+                <a href="paquetes.html">Paquetes</a>
+            </span>
+            <span>
+                <a href="acerca.html">Acerca de</a>
+            </span>
+        </div>
+    </nav>
+
+    <section id="banner2">
+        <h1>¡Gracias por tu compra!</h1>
+    </section>
+
+    <section class="detalles-compra">
+        <h2>Detalles de tu compra</h2>
+        <table>
+            <tr>
+                <th>Usuario</th>
+                <td id="usuario-nombre"></td>
+            </tr>
+            <tr>
+                <th>Correo</th>
+                <td id="usuario-correo"></td>
+            </tr>
+            <tr>
+                <th>Producto</th>
+                <td id="producto-nombre"></td>
+            </tr>
+            <tr>
+                <th>Paquete Seleccionado</th>
+                <td id="producto-paquete"></td>
+            </tr>
+            <tr>
+                <th>Cantidad</th>
+                <td id="producto-cantidad"></td>
+            </tr>
+            <tr>
+                <th>Precio Unitario</th>
+                <td>$<span id="producto-precio"></span></td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td>$<span id="producto-total"></span></td>
+            </tr>
+        </table>
+        <a href="index.html" class="button">Volver al Inicio</a>
+    </section>
+    
+
+    <footer>
+        <p>
+            &copy; Stars. Todos los derechos reservados
+        </p>
+    </footer>
+
+    <script src="./js/confirmacionPago.js" defer></script>
+</body>
+
+</html>
