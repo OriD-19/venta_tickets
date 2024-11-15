@@ -92,11 +92,7 @@ export async function loginUser(email, password) {
 
         if (userSnapshot.data().role === "admin" || userSnapshot.data().role === "authorized") {
             console.log("Usuario logueado: ", user);
-
-            // sessionStorage information setting
-            sessionStorage.setItem("user", JSON.stringify(userSnapshot.data()));
-
-            window.location.href = "inicio_empleado.html";
+            return userSnapshot.data();
         }
 
     } catch (e) {
@@ -119,8 +115,7 @@ export async function editRole(userId, newRole) {
 
 export async function deleteEmpleado(userId) {
     try {
-        console.log(auth);
-        //await deleteDoc(doc(db, "usuarios", userId));
+        await deleteDoc(doc(db, "usuarios", userId));
         return true;
     } catch (e) {
         console.error("Error al eliminar empleado: ", e);

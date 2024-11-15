@@ -1,6 +1,8 @@
 import { registerUser, loginUser } from "./config.js";
 
-//registerUser("fernandocastillo.8@hotmail.com", "123456", "Fernando", "Fuentes", "admin");
+if (sessionStorage.getItem("user")) {
+    window.location.href = "inicio_empleado.html";
+}
 
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -8,6 +10,10 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value;
 
     alert("Datos capturados: " + email);
-    await loginUser(email, password);
+    const userData = await loginUser(email, password);
+
+    // sessionStorage information setting
+    sessionStorage.setItem("user", JSON.stringify(userData));
+    window.location.href = "inicio_empleado.html";
 });
 

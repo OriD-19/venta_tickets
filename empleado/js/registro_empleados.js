@@ -13,16 +13,18 @@ async function renderEmployees() {
     employees.forEach((employee) => {
         const div = document.createElement('div');
         div.classList.add('card');
-        div.classList.add('m-3');
-        div.classList.add('col-3');
+        div.classList.add('bg-dark');
+        div.classList.add('col-12');
+        div.classList.add('col-md-6');
+        div.classList.add('col-lg-4');
 
         div.innerHTML = `
         <div class="card-title p-3">
-            <h3>${employee.firstName} ${employee.lastName}</h3>
+            <h3 class="text-white">${employee.firstName} ${employee.lastName}</h3>
         </div>
         <div class="card-body p-3">
-            <p>Correo: ${employee.email}</p>
-            <p>Rol: ${employee.role}</p>
+            <p class="text-light">Correo: ${employee.email}</p>
+            <p class="text-light">Rol: ${employee.role}</p>
         </div>
         <div class="card-footer">
         <!-- Botón para editar permisos  -->
@@ -51,10 +53,15 @@ formEditarRol.addEventListener('submit', async (e) => {
     const newRole = formEditarRol['rol'].value;
 
     await editRole(currentEdit, newRole); 
-    document.getElementById('modalEditarRol').click();
+    const modal = document.getElementById('modalEditarRol');
+    const m = bootstrap.Modal.getInstance(modal);
+    m.hide();
 
     mensaje.innerText = "Rol actualizado correctamente";
     toast.show();
+
+    containerEmpleados.innerHTML = "";
+    renderEmployees();
 });
 
 const btnEliminarEmpleado = document.getElementById('btnEliminarEmpleado');
@@ -67,7 +74,10 @@ btnEliminarEmpleado.addEventListener('click', async () => {
         return;
     }
 
-    document.getElementById('modalEliminarEmpleado').click();
+    const modal = document.getElementById('modalEliminarEmpleado');
+    const m = bootstrap.Modal.getInstance(modal);
+    m.hide();
+
     mensaje.innerText = "Empleado eliminado correctamente";
     toast.show();
 
@@ -86,9 +96,15 @@ formRegistroEmpleado.addEventListener('submit', async (e) => {
 
     await registerUser(email, password, firstName, lastName, role);
 
+    // limpiar formulario
+    formRegistroEmpleado.reset();
+
     mensaje.innerText = "Empleado registrado correctamente";
     toast.show();
-    document.getElementById('modalCrearEmpleado').click();
+
+    const modal = document.getElementById('modalCrearEmpleado');
+    const m = bootstrap.Modal.getInstance(modal);
+    m.hide();
 
     containerEmpleados.innerHTML = "";
     renderEmployees();
