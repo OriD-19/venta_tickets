@@ -36,7 +36,7 @@
 
         <main>
             <div class="encabezado">
-                <h1><span>Comprar boletos:</span>Ferxxocalipsis World Tour</h1> 
+                <h1><span>Comprar boletos:</span></h1> 
             </div>
 
             <form action="comprar_boletos.php">
@@ -44,16 +44,19 @@
                     <legend>Datos generales</legend>
 
                     <label for="nombre">Nombre</label>
-                    <input type="text" pattern="[^\d]*">
+                    <input id="nombre" type="text" pattern="[^\d]*" name="apellido">
+                    <p class="error" id="errorNombre"></p>
 
                     <label for="apellido">Apellido</label>
-                    <input type="text" pattern="[^\d]*">
+                    <input id="apellido" type="text" pattern="[^\d]*" name="apellido">
 
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" />
+                    <input id="correo" type="email" name="correo"/>
+                    <p class="error" id="errorCorreo"></p>
 
                     <label for="dui">DUI</label>
-                    <input type="text" pattern="[0-9]{9}" />
+                    <input id="dui" type="text" pattern="[0-9]{9}" />
+                    <p class="error" id="errorDui"></p>
 
                 </fieldset> 
 
@@ -62,19 +65,18 @@
                     
                     <label for="ubicacion">Ubicacion</label>
                     <select name="ubicacion" id="ubicacion">
-                        <option value="platinum">Platinum $115</option>
-                        <option value="vipl">VIP $65</option>
-                        <option value="trib_baja">Tribuna Baja $45</option>
-                        <option value="trib_alta">Tribuna Alta $35</option>
-                        <option value="general">General $20</option>
                     </select>
+
+                    <label for="cantidad">Cantidad</label>
+                    <input id="cantidad" value="1" type="number" min="1" max="20">
+                    <p class="error" id="errorCantidad"></p>
 
                     <label for="paquete">Paquete Adicional</label>
                     <select name="paquete" id="paquete">
-                        <option value="ninguno">Ninguno</option>
-                        <option value="p_vip">Paquete VIP</option>
-                        <option value="golden_circle">Paquete Golden Circle</option>
-                        <option value="super_fan">Paquete Super Fan</option>
+                        <option value="0">Ninguno</option>
+                        <option value="200">Paquete VIP - $200</option>
+                        <option value="300">Paquete Golden Circle - $300</option>
+                        <option value="400">Paquete Super Fan - $400</option>
                     </select>
 
                     <img src="img/venta_tickets.jpg" alt="Distribucion de los asientos durante el concierto">
@@ -91,7 +93,8 @@
                     </div>
 
                     <label for="num_tarjeta">Número de tarjeta</label>
-                    <input type="text" pattern="[0-9]{16}">
+                    <input id="num_tarjeta" type="text" pattern="[0-9]{16}">
+                    <p class="error" id="errorTarjeta"></p>
 
                     <label for="nombre">Nombre del titular</label>
                     <input type="text" pattern="[^\d]*">
@@ -99,20 +102,22 @@
                     <div class="exp_cvv">
                         <div>
                             <label for="fecha_exp">Vence</label>
-                            <input type="date">
+                            <input id="fecha_exp" type="text" placeholder="mm/yy">
+                            <p class="error" id="errorExpiracion"></p>
                         </div>
 
                         <div>
                             <label for="cvv">CVV</label>
-                            <input type="number" min="100" max="999">
+                            <input type="number" min="100" max="999" id="cvv">
+                            <p class="error" id="errorCvv"></p>
                         </div>
                     </div>
 
                 </fieldset>
 
-                <h3>Total: $115.00</h3>
+                <h3 id="total">Total: $...</h3>
 
-                <input type="submit" value="Comprar">
+                <input id="finalizarCompra" type="submit" value="Comprar">
             </form>
         </main>
 
@@ -123,5 +128,7 @@
             &copy; Stars. Todos los derechos reservados
         </p>
     </footer>
+
+        <script type="module" src="./js/detallesCompra.js" defer></script>
     </body>
 </html>

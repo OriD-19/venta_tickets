@@ -54,6 +54,17 @@ export const mostrarConciertos = async () => {
     }
 }
 
+export const getConcierto = async (idConcierto) => {
+    try {
+        const conciertoReferencia = doc(db, "conciertos", idConcierto);
+        const conciertoSnapshot = await getDoc(conciertoReferencia);
+        return conciertoSnapshot.data();
+    } catch (error) {
+        console.log(error);
+        alert("No se pudo obtener el concierto.")
+    }
+}
+
 export const eliminarConcierto = async (idConcierto) => {
     try {
         await deleteDoc(doc(db, "conciertos", idConcierto));
@@ -82,6 +93,36 @@ export const modificarConcierto = async (idConcierto, artistaEdit, descripcionEd
     } catch (error) {
         console.log(error);      
         alert("No se pudo modificr el concierto.");
+    }
+};
+
+export const comprarBoletos = async (idConcierto, ubicacion, cantidad) => {
+    try {
+        const conciertoReferencia = doc(db, "conciertos", idConcierto);
+        const conciertoSnapshot = await getDoc(conciertoReferencia);
+        const concierto = conciertoSnapshot.data();
+        const localidades = concierto.localidades; // todas las localidades
+
+        const localidad = localidades.filter(localidad => localidad.tipoBoleto === ubicacion)[0]; // filtrando la localidad que compro el cliente
+
+        const disponibles = localidad.disponibles;
+
+        if (disponibles < cantidad) {
+            alert("No hay suficientes boletos disponibles");
+            return;
+        }
+
+        await updateDoc(conciertoReferencia, {
+            localidades: [{
+                ...localidad,
+                disponibles: disponibles - cantidad
+            }, ...localidades.filter(localidad => localidad.tipoBoleto !== ubicacion)], // el resto de localidades no se ven modificadas
+        });
+
+        alert("Compra realizada con éxito");
+    } catch (error) {
+        console.log(error);
+        alert("No se pudo realizar la compra");
     }
 }
 //créditos: https://www.youtube.com/watch?v=ey4k6mW9ds4&t=1341s

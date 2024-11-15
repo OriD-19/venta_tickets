@@ -13,10 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>${concierto.descripcion}
             <span>Fecha: ${new Date(concierto.fecha).toLocaleDateString()}</span>
             </p>
-            <a href="detallesCompra.html" class="button"> Comprar boleto</a>
+            <a id="${concierto.id}" href="detallesCompra.html" class="button"> Comprar boleto</a>
             `;
 
                 contenedorCartas.appendChild(conciertoCard);
+                document.getElementById(concierto.id).addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const params = new URLSearchParams();
+                    params.append("id", concierto.id);
+                    window.location.href = `detallesCompra.html?${params.toString()}`;
+                });
+
 
             });
         }
