@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getFirestore, setDoc, getDoc, doc, collection, addDoc, getDocs, query, or, where, deleteDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getFirestore, setDoc, getDoc, doc, collection, addDoc, getDocs, query, or, where, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, deleteUser } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -51,6 +51,37 @@ export const mostrarConciertos = async () => {
     } catch (error) {
         alert("Error al obtener los concierts", error)
         return []; //si no se pueden obtener los registros, se regresa un arreglo vacío
+    }
+}
+
+export const eliminarConcierto = async (idConcierto) => {
+    try {
+        await deleteDoc(doc(db, "conciertos", idConcierto));
+        alert("Se eliminó el concierto")
+
+    } catch (error) {
+        console.log(error);
+        alert("No se pudo eliminar el concierto.")
+    }
+}
+
+export const modificarConcierto = async (idConcierto, artistaEdit, descripcionEdit, fechaEdit, lugarEdit, localidadEdit, precioEdit, ulrEdit) => {
+    try {
+        const conciertoReferencia = doc(db, "conciertos", idConcierto);
+        await updateDoc(conciertoReferencia, {
+            artista: artistaEdit,
+            descripcion: descripcionEdit,
+            fecha: fechaEdit,
+            lugar: lugarEdit,
+            localidades: localidadEdit,
+            precio: precioEdit,
+            urlImagen: ulrEdit
+        })
+        alert("Concierto modificado con éxito.");
+        window.location.reload();        
+    } catch (error) {
+        console.log(error);      
+        alert("No se pudo modificr el concierto.");
     }
 }
 //créditos: https://www.youtube.com/watch?v=ey4k6mW9ds4&t=1341s

@@ -1,4 +1,4 @@
-import { mostrarConciertos, eliminarConcierto } from "./config.js";
+import { mostrarConciertos, eliminarConcierto, modificarConcierto } from "./config.js";
 
 /*Define el modal para mandarlo a llamar*/
 const modal = new bootstrap.Modal(document.getElementById("editConciertoModal"), {});
@@ -46,14 +46,35 @@ const modal = new bootstrap.Modal(document.getElementById("editConciertoModal"),
 
                     const modificarBtn = conciertoCard.querySelector(".editar-btn")
                     modificarBtn.addEventListener("click", async () => {
+                        //para mostrar en el modal los datos actuales del concierto
+                        document.getElementById("editArtista").value = concierto.artista;
+                        document.getElementById("editDescripcion").value = concierto.descripcion;
+                        document.getElementById("editFecha").value = concierto.fecha;
+                        document.getElementById("editLugar").value = concierto.lugar;
+                        document.getElementById("editLocalidades").value = concierto.localidades;
+                        document.getElementById("editPrecio").value = concierto.precio;
+                        document.getElementById("editUrlImagen").value = concierto.urlImagen;
                         modal.show();
+
+                        const guardarEdit = document.getElementById("saveChangesBtn");
+                        guardarEdit.onclick = async () => {
+                            const artista = document.getElementById("editArtista").value.trim();
+                            const descripcion = document.getElementById("editDescripcion").value.trim();
+                            const fecha = document.getElementById("editFecha").value;
+                            const lugar = document.getElementById("editLugar").value.trim();
+                            const localidades = document.getElementById("editLocalidades").value;
+                            const precio = document.getElementById("editPrecio").value;
+                            const imagen = document.getElementById("editUrlImagen").value.trim();
+                            await modificarConcierto(concierto.id, artista, descripcion, fecha, lugar, localidades, precio, imagen);
+                            modal.hide();
+                        }
                     })
 
                     contenedorCartas.appendChild(conciertoCard);
                 });
             }
             catch (error) {
-                alert("No se pueden mostrar los conciertos: ", error);
+                console.log(error);
             }
         }
 
