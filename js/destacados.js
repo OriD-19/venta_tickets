@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 import { mostrarConciertos } from "../empleado/js/config.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     const contenedorCartas = document.getElementById("eventosContainer");
     const mostrarTarjetasConciertos = async () => {
@@ -21,41 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
         catch (error) {
-            alert("No se pueden mostrar los concietos: ", error)
+            console.error("No se pueden mostrar los concietos: ", error)
         }
     }
 
     mostrarTarjetasConciertos();
 
 });
-=======
-import { mostrarConciertos } from "../empleado/js/config.js";
-document.addEventListener("DOMContentLoaded", () => {
-    const contenedorCartas = document.getElementById("eventosContainer");
-    const mostrarTarjetasConciertos = async () => {
-        try {
-            const arregloConcierto = await mostrarConciertos();
-            arregloConcierto.forEach(concierto => {
-                const conciertoCard = document.createElement("article");
-                conciertoCard.innerHTML = `
-            <img src="${concierto.urlImagen}" alt=""${concierto.artista}">
-            <h3>${concierto.artista} </h3>
-            <p>${concierto.descripcion}
-            <span>Fecha: ${new Date(concierto.fecha).toLocaleDateString()}</span>
-            </p>
-            <a href="detallesCompra.html" class="button"> Comprar boleto</a>
-            `;
-
-                contenedorCartas.appendChild(conciertoCard);
-
-            });
-        }
-        catch (error) {
-            alert("No se pueden mostrar los concietos: ", error)
-        }
-    }
-
-    mostrarTarjetasConciertos();
-
-});
->>>>>>> 255c0f5 (merge con nat)
