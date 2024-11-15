@@ -18,13 +18,13 @@ export function validarFormulario(artista, descripcion, fecha, lugar, localidade
     const fechaActual = new Date();
     const fechaConcierto = new Date(fecha);
     if (fecha === "" || fechaConcierto <= fechaActual) {
-        alert("La fecha del concierto debe ser futura.");
+        alert("La fecha del concierto debe ser mayor a la actual.");
         isValid = false;
     }
 
     // Validar lugar (no vacío, solo letras y espacios)
-    if (!/^[a-zA-Z\s]+$/.test(lugar)) {
-        alert("El lugar del concierto solo debe contener letras y espacios, sin números.");
+    if (lugar === "") {
+        alert("El lugar del concierto no debe estar vacio");
         isValid = false;
     }
 
@@ -36,7 +36,7 @@ export function validarFormulario(artista, descripcion, fecha, lugar, localidade
 
     // Validar precio (mayor a 0, permite decimales)
     if (isNaN(precio) || parseFloat(precio) <= 0) {
-        alert("El precio del boleto debe ser mayor a 0.");
+        alert("El precio del boleto debe ser mayor a $0.00");
         isValid = false;
     }
 
