@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -60,6 +60,26 @@ export const eliminarConcierto = async (idConcierto) => {
     } catch (error) {
         console.log(error);
         alert("No se pudo eliminar el concierto.")
+    }
+}
+
+export const modificarConcierto = async (idConcierto, artistaEdit, descripcionEdit, fechaEdit, lugarEdit, localidadEdit, precioEdit, ulrEdit) => {
+    try {
+        const conciertoReferencia = doc(db, "conciertos", idConcierto);
+        await updateDoc(conciertoReferencia, {
+            artista: artistaEdit,
+            descripcion: descripcionEdit,
+            fecha: fechaEdit,
+            lugar: lugarEdit,
+            localidades: localidadEdit,
+            precio: precioEdit,
+            urlImagen: ulrEdit
+        })
+        alert("Concierto modificado con éxito.");
+        window.location.reload();        
+    } catch (error) {
+        console.log(error);      
+        alert("No se pudo modificr el concierto.");
     }
 }
 
