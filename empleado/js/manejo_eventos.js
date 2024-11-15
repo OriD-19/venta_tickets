@@ -1,4 +1,5 @@
 import { mostrarConciertos, eliminarConcierto, modificarConcierto } from "./config.js";
+import { validarFormulario } from "./validaciones.js";
 
 /*Define el modal para mandarlo a llamar*/
 const modal = new bootstrap.Modal(document.getElementById("editConciertoModal"), {});
@@ -65,10 +66,14 @@ const modal = new bootstrap.Modal(document.getElementById("editConciertoModal"),
                             const localidades = document.getElementById("editLocalidades").value;
                             const precio = document.getElementById("editPrecio").value;
                             const imagen = document.getElementById("editUrlImagen").value.trim();
-                            await modificarConcierto(concierto.id, artista, descripcion, fecha, lugar, localidades, precio, imagen);
-                            modal.hide();
+
+                            if (validarFormulario(artista, descripcion, fecha, lugar, localidades, precio, imagen)) {
+                                await modificarConcierto(concierto.id, artista, descripcion, fecha, lugar, localidades, precio, imagen);
+                                modal.hide();
+                            }
+
                         }
-                    })
+                    });
 
                     contenedorCartas.appendChild(conciertoCard);
                 });
