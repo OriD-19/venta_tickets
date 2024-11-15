@@ -1,10 +1,12 @@
-if (sessionStorage.getItem("user") === null) {
-    alert("No has iniciado sesión");
-    window.location.href = "login.html";
+const usersTab = document.getElementById("usersTab");
+if (user.role !== "admin") {
+    usersTab.style.display = "none";
+
+    const tab = new bootstrap.Tab(document.getElementById("conciertos-tab"));
+    tab.show();
+
+
+    document.getElementById('usuarios').classList.remove('active');
+    document.getElementById('conciertos').classList.add('active');
 }
 
-const user = JSON.parse(sessionStorage.getItem("user"));
-if (user.role !== "admin") {
-    alert("No tienes permisos para acceder a esta página");
-    window.location.href = "inicio_empleado.html";
-}
