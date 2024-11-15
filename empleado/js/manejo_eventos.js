@@ -20,6 +20,7 @@ const modal = new bootstrap.Modal(document.getElementById("editConciertoModal"),
                     // Alternar colores
                     const colorClass = colores[colorIndex % colores.length];
                     colorIndex++;
+                    const localidades = concierto.localidades.map(localidad => localidad.tipoBoleto);
 
                     conciertoCard.innerHTML = `
                         <div class="card card-custom ${colorClass}">
@@ -28,9 +29,8 @@ const modal = new bootstrap.Modal(document.getElementById("editConciertoModal"),
                                 <h2 class="card-title">${concierto.artista}</h2>
                                 <p class="card-text">${concierto.descripcion}</p>
                                 <p class="card-text">Lugar: ${concierto.lugar}</p>
-                                <p class="card-text">Localidades: ${concierto.localidades}</p>                    
+                                <p class="card-text">Localidades: ${localidades.join(", ")}</p>                    
                                 <p class="card-text">Fecha: ${new Date(concierto.fecha).toLocaleDateString()}</p>
-                                <p class="card-text">Precio: $${concierto.precio}</p>
                                 <button class="btn btn-danger mt-2 eliminar-btn" data-id="${concierto.id}">Eliminar</button>
                                 <button class="btn btn-warning mt-2 editar-btn" data-id="${concierto.id}">Editar</button>
                             </div>
@@ -45,34 +45,48 @@ const modal = new bootstrap.Modal(document.getElementById("editConciertoModal"),
                         }
                     })
 
-                    const modificarBtn = conciertoCard.querySelector(".editar-btn")
+                    const modificarBtn = conciertoCard.querySelector(".editar-btn");
                     modificarBtn.addEventListener("click", async () => {
-                        //para mostrar en el modal los datos actuales del concierto
                         document.getElementById("editArtista").value = concierto.artista;
                         document.getElementById("editDescripcion").value = concierto.descripcion;
                         document.getElementById("editFecha").value = concierto.fecha;
                         document.getElementById("editLugar").value = concierto.lugar;
-                        document.getElementById("editLocalidades").value = concierto.localidades;
-                        document.getElementById("editPrecio").value = concierto.precio;
                         document.getElementById("editUrlImagen").value = concierto.urlImagen;
+
                         modal.show();
 
                         const guardarEdit = document.getElementById("saveChangesBtn");
                         guardarEdit.onclick = async () => {
-                            const artista = document.getElementById("editArtista").value.trim();
-                            const descripcion = document.getElementById("editDescripcion").value.trim();
-                            const fecha = document.getElementById("editFecha").value;
-                            const lugar = document.getElementById("editLugar").value.trim();
-                            const localidades = document.getElementById("editLocalidades").value;
-                            const precio = document.getElementById("editPrecio").value;
-                            const imagen = document.getElementById("editUrlImagen").value.trim();
+                            const artistaEdit = document.getElementById("editArtista").value.trim();
+                            const descripcionEdit = document.getElementById("editDescripcion").value.trim();
+                            const fechaEdit = document.getElementById("editFecha").value;
+                            const lugarEdit = document.getElementById("editLugar").value;
+                            const precioPlatinum = parseFloat(document.getElementById("editPrecioPlatinum").value);
+                            const precioGeneral = parseFloat(document.getElementById("editPrecioGeneral").value);
+                            const precioVIP = parseFloat(document.getElementById("editPrecioVIP").value);
+                            const urlEdit = document.getElementById("editUrlImagen").value.trim();
 
-                            if (validarFormulario(artista, descripcion, fecha, lugar, localidades, precio, imagen)) {
-                                await modificarConcierto(concierto.id, artista, descripcion, fecha, lugar, localidades, precio, imagen);
-                                modal.hide();
+                            if (artistaEdit && descripcionEdit && fechaEdit && lugarEdit && !isNaN(precioPlatinum) && !isNaN(precioGeneral) && !isNaN(precioVIP) && urlEdit) {
+                                try {
+                                    await modificarConcierto(
+                                        concierto.id,
+                                        artistaEdit,
+                                        descripcionEdit,
+                                        fechaEdit,
+                                        lugarEdit,
+                                        precioPlatinum,
+                                        precioVIP,
+                                        precioGeneral,
+                                        urlEdit
+                                    );
+                                    modal.hide();
+                                } catch (error) {
+                                    console.error("Error al modificar el concierto: ", error);
+                                }
+                            } else {
+                                alert("Por favor, completa todos los campos correctamente.");
                             }
-
-                        }
+                        };
                     });
 
                     contenedorCartas.appendChild(conciertoCard);

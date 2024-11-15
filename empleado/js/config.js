@@ -20,22 +20,38 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-export const guardarConcierto = async (artista, descripcion, fecha, lugar, localidades, precio, urlImagen) => {
+export const guardarConcierto = async (artistaform, descripcionform, fechaform, lugarform, precioPlatinum, precioVIP, precioGeneral, urlImagenform) => {
     try {
         await addDoc(collection(db, "conciertos"), {
-            artista,
-            descripcion,
-            fecha,
-            lugar,
-            localidades,
-            precio,
-            urlImagen
+            artista: artistaform,
+            descripcion: descripcionform,
+            fecha: fechaform,
+            lugar: lugarform,
+            localidades: [
+                {
+                    tipoBoleto: "Platinum",
+                    precio: precioPlatinum,
+                    disponibles: 500,
+                },
+                {
+                    tipoBoleto: "General",
+                    precio: precioGeneral,
+                    disponibles: 1000,
+                },
+                {
+                    tipoBoleto: "VIP",
+                    precio: precioVIP,
+                    disponibles: 100,
+                },
+            ],
+            urlImagen: urlImagenform,
         });
-        alert("Concierto registrado correctamente.")
-    } catch (error){
-        alert("Error al guardar el concierto: ", error);
+        alert("Concierto registrado correctamente.");
+    } catch (error) {
+        console.error("Error al guardar el concierto: ", error);
+        alert("Error al guardar el concierto.");
     }
-}
+};
 
 export const mostrarConciertos = async () => {
     try {
@@ -54,17 +70,6 @@ export const mostrarConciertos = async () => {
     }
 }
 
-export const getConcierto = async (idConcierto) => {
-    try {
-        const conciertoReferencia = doc(db, "conciertos", idConcierto);
-        const conciertoSnapshot = await getDoc(conciertoReferencia);
-        return conciertoSnapshot.data();
-    } catch (error) {
-        console.log(error);
-        alert("No se pudo obtener el concierto.")
-    }
-}
-
 export const eliminarConcierto = async (idConcierto) => {
     try {
         await deleteDoc(doc(db, "conciertos", idConcierto));
@@ -76,7 +81,7 @@ export const eliminarConcierto = async (idConcierto) => {
     }
 }
 
-export const modificarConcierto = async (idConcierto, artistaEdit, descripcionEdit, fechaEdit, lugarEdit, localidadEdit, precioEdit, ulrEdit) => {
+export const modificarConcierto = async (idConcierto, artistaEdit, descripcionEdit, fechaEdit, lugarEdit, precioPlatinum, precioVIP, precioGeneral, ulrEdit) => {
     try {
         const conciertoReferencia = doc(db, "conciertos", idConcierto);
         await updateDoc(conciertoReferencia, {
@@ -84,45 +89,30 @@ export const modificarConcierto = async (idConcierto, artistaEdit, descripcionEd
             descripcion: descripcionEdit,
             fecha: fechaEdit,
             lugar: lugarEdit,
-            localidades: localidadEdit,
-            precio: precioEdit,
-            urlImagen: ulrEdit
+            localidades: [
+                {
+                    tipoBoleto: "Platinum",
+                    precio: precioPlatinum,
+                    disponibles: 500,
+                },
+                {
+                    tipoBoleto: "General",
+                    precio: precioGeneral,
+                    disponibles: 1000,
+                },
+                {
+                    tipoBoleto: "VIP",
+                    precio: precioVIP,
+                    disponibles: 100,
+                },
+            ],
+            urlImagen: ulrEdit,
         })
         alert("Concierto modificado con éxito.");
         window.location.reload();        
     } catch (error) {
         console.log(error);      
         alert("No se pudo modificr el concierto.");
-    }
-};
-
-export const comprarBoletos = async (idConcierto, ubicacion, cantidad) => {
-    try {
-        const conciertoReferencia = doc(db, "conciertos", idConcierto);
-        const conciertoSnapshot = await getDoc(conciertoReferencia);
-        const concierto = conciertoSnapshot.data();
-        const localidades = concierto.localidades; // todas las localidades
-
-        const localidad = localidades.filter(localidad => localidad.tipoBoleto === ubicacion)[0]; // filtrando la localidad que compro el cliente
-
-        const disponibles = localidad.disponibles;
-
-        if (disponibles < cantidad) {
-            alert("No hay suficientes boletos disponibles");
-            return;
-        }
-
-        await updateDoc(conciertoReferencia, {
-            localidades: [{
-                ...localidad,
-                disponibles: disponibles - cantidad
-            }, ...localidades.filter(localidad => localidad.tipoBoleto !== ubicacion)], // el resto de localidades no se ven modificadas
-        });
-
-        alert("Compra realizada con éxito");
-    } catch (error) {
-        console.log(error);
-        alert("No se pudo realizar la compra");
     }
 }
 //créditos: https://www.youtube.com/watch?v=ey4k6mW9ds4&t=1341s

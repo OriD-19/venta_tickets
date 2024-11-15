@@ -37,33 +37,22 @@
 
         <main>
             <h1>Buscar conciertos</h1>
-            <form action="buscar_concierto.php">
+            <form id="buscarConciertos">
                 <h2>Encontrar eventos cercanos</h2>
-                <div class="form_control">
-                    <label for="tipo_evento">
-                        <h3>Tipo de evento</h3>
-                    </label>
-                    <select name="tipo_evento" id="tipo_evento">
-                        <option value="concierto">Concierto</option>
-                        <option value="partido">Partido</option>
-                        <option value="vainas">Otros</option>
-                    </select>
-                </div>
-
                 <div class="form_control">
                     <h3>Fecha</h3>
                     <div class="select_fechas">
                         <div>
-                            <label for="fecha_desde">
+                            <label for="fechaDesde">
                                 <h4>Desde</h4>
                             </label>
-                            <input type="date" name="fecha_desde" id="fecha_desde">
+                            <input type="date" name="fechaDesde" id="fechaDesde">
                         </div>
                         <div>
-                            <label for="fecha_hasta">
+                            <label for="fechaHasta">
                                 <h4>Hasta</h4>
                             </label>
-                            <input type="date" name="fecha_hasta" id="fecha_hasta">
+                            <input type="date" name="fechaHasta" id="fechaHasta">
                         </div>
 
                     </div>
@@ -74,10 +63,10 @@
                         <h3>Lugar</h3>
                     </label>
                     <select name="lugar_evento" id="lugar_evento">
-                        <option value="cusca">Estadio Cuscatlán</option>
-                        <option value="teatro">Teatro Nacional</option>
-                        <option value="salamanca">Salamanca Centros y convenciones</option>
-                        <option value="otros">Otros</option>
+                        <option value="Estadio Cuscatlán">Estadio Cuscatlán</option>
+                        <option value="Teatro Nacional">Teatro Nacional</option>
+                        <option value="Salamanca, El Salvador">Salamanca Centros y convenciones</option>
+                        <option value="Otro">Otros</option>
                     </select>
 
                 </div>
@@ -89,49 +78,7 @@
                 <h2>Resultados</h2>
 
                 <div class="card_container">
-
-                    <div class="card">
-                        <div class="image">
-                        </div>
-
-                        <div class="card_content">
-                            <h4>Ximena Sariñana</h4>
-                            <p>Lugar: Estadio Cuscatlán</p>
-                            <p>Hora: 7:00 PM</p>
-                            <p>Fecha: 18 de octubre</p>
-                            <a href="detallesCompra.html">
-                                Comprar
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="image">
-                        </div>
-                        <div class="card_content">
-                            <h4>Ferxxocalipsis World Tour</h4>
-                            <p>Lugar: Estadio Cuscatlán</p>
-                            <p>Hora: 9:00 PM</p>
-                            <p>Fecha: 25 de octubre</p>
-                            <a href="detallesCompra.html">
-                                Comprar
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="image">
-                        </div>
-                        <div class="card_content">
-                            <h4>Fred again..</h4>
-                            <p>Lugar: Estadio Cuscatlán</p>
-                            <p>Hora: 9:30 PM</p>
-                            <p>Fecha: 30 de octubre</p>
-                            <a href="detallesCompra.html">
-                                Comprar
-                            </a>
-                        </div>
-                    </div>
+                    <!-- Tarjetas renderizadas con JavaScript -->
                 </div>
 
             </div>
@@ -145,5 +92,7 @@
             &copy; Stars. Todos los derechos reservados
         </p>
     </footer>
+
+        <script src="./js/buscarConciertos.js" defer type="module"></script>
     </body>
 </html>

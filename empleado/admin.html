@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Administración de Conciertos</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link href="../css/general.css" rel="stylesheet">
         <link href="../css/buscarConciertos.css" rel="stylesheet">
     </head>
@@ -20,9 +21,6 @@
             <div class="items">
                 <span>
                     <a href="admin.html">Administración</a>
-                </span>
-                <span>
-                    <a href="eventos.html">Eventos</a>
                 </span>
                 <span>
                     <a href="gestionEventos.html">Agregar Evento</a>
@@ -75,7 +73,6 @@
                         <!-- Menú para Administración de Eventos -->
                         <div class="d-flex flex-column align-items-center mt-4">
                             <div class="d-grid gap-3 col-6">
-                                <a href="eventos.html" class="btn btn-outline-light btn-lg fw-bold rounded-pill">Eventos</a>
                                 <a href="gestionEventos.html" class="btn btn-outline-light btn-lg fw-bold rounded-pill">Agregar Evento</a>
                                 <br>
                             </div>
@@ -212,40 +209,50 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editModalLabel">Editar Concierto</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                        <h5 class="modal-title text-dark" id="editModalLabel">Editar Concierto</h5>
+                        <button type="button" class="close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="text-dark">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="editConciertoForm">
+                        <form id="editConciertoForm text-dark">
                             <input type="hidden" id="editConciertoId">
                             <div class="form-group">
-                                <label for="editArtista">Artista</label>
+                                <label for="editArtista" class="text-dark">Artista</label>
                                 <input type="text" class="form-control" id="editArtista" required>
                             </div>
                             <div class="form-group">
-                                <label for="editDescripcion">Descripción</label>
+                                <label for="editDescripcion" class="text-dark">Descripción</label>
                                 <textarea class="form-control" id="editDescripcion" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="editFecha">Fecha</label>
+                                <label for="editFecha" class="text-dark">Fecha</label>
                                 <input type="date" class="form-control" id="editFecha" required>
                             </div>
                             <div class="form-group">
-                                <label for="editLugar">Lugar</label>
+                                <label for="editLugar" class="text-dark">Lugar</label>
                                 <input type="text" class="form-control" id="editLugar" required>
                             </div>
-                            <div class="form-group">
-                                <label for="editLocalidades">Localidades</label>
-                                <input type="number" class="form-control" id="editLocalidades" min="1" required>
+                    <div class="form-group">
+                            <label class="text-dark">Localidades</label>
+                            <div class="mb-3">
+                                <label for="editPrecioPlatinum" class="text-dark">Precio Platinum</label>
+                                <input type="number" class="form-control" id="editPrecioPlatinum"
+                                    placeholder="Precio para Platinum" required>
                             </div>
-                            <div class="form-group">
-                                <label for="editPrecio">Precio</label>
-                                <input type="number" class="form-control" id="editPrecio" min="0" step="0.01" required>
+                            <div class="mb-3">
+                                <label for="editPrecioGeneral" class="text-dark">Precio General</label>
+                                <input type="number" class="form-control" id="editPrecioGeneral"
+                                    placeholder="Precio para General" required>
                             </div>
+                            <div>
+                                <label for="editPrecioVIP" class="text-dark">Precio VIP</label>
+                                <input type="number" class="form-control" id="editPrecioVIP"
+                                    placeholder="Precio para VIP" required>
+                            </div>
+                        </div>
                             <div class="form-group">
-                                <label for="editUrlImagen">URL de la Imagen</label>
+                                <label for="editUrlImagen" class="text-dark">URL de la Imagen</label>
                                 <input type="url" class="form-control" id="editUrlImagen" required>
                             </div>
                         </form>

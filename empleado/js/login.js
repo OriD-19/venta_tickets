@@ -9,7 +9,6 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    alert("Datos capturados: " + email);
     const userData = await loginUser(email, password);
 
     // sessionStorage information setting

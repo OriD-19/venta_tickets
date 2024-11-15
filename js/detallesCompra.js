@@ -2,8 +2,9 @@ import { getConcierto, comprarBoletos } from "../empleado/js/config.js";
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
+console.log(id);
 
-if (id === "") {
+if (!id) {
     alert("Selecciona un concierto para ver su informacion de compra");
     window.location.href = "destacados.html";
 }
@@ -241,6 +242,7 @@ async function renderConcierto() {
         const mesActual = fechaActual.getMonth() + 1;
 
         if (parseInt(anio) < parseInt(anioActual) || (parseInt(anio) === parseInt(anioActual) && parseInt(mes) < mesActual)) {
+            errores.errorExpiracion = "La tarjeta está vencida";
             return false;
         }
 
@@ -301,9 +303,31 @@ async function renderConcierto() {
         });
 
         if (valido) {
+            const boletoSeleccionado = concierto.localidades.filter(localidad => localidad.tipoBoleto === ubicacion)[0];
+            const cantidad = document.querySelector("#cantidad").value;
+            const paquete = document.querySelector("#paquete").value;
+
             await comprarBoletos(id, ubicacion, cantidad);
-            // TODO: redirigir a la página de confirmación de compra
-        }
+
+            const mapPaquetes = {
+                0: "Ninguno",
+                100: "VIP",
+                200: "Golden Circle",
+                300: "Super Fan",
+            }
+
+            sessionStorage.setItem('infoPago', JSON.stringify({
+                nombre: document.getElementById('nombre').value + " " + document.getElementById('apellido').value,
+                correo: document.getElementById('correo').value,
+                cantidad,
+                paquete: mapPaquetes[paquete],
+                boletoSeleccionado: boletoSeleccionado.tipoBoleto,
+                precioUnitario: boletoSeleccionado.precio,
+                total: document.querySelector("#total").innerText
+            }));
+
+            window.location.href = "confirmacionPago.html";
+        };
     });
 }
 

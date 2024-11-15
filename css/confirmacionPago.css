@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --fondo: #02020e;
+    --titulo: #e8e5de;
+    --encabezado: #720605;
+    --especial1: #E6AF2E;
+    --especial2: #A3320B;
+    --fuente: 'Oufit', sans-serif;
+    --titulo2: #E6AF2E;
+    --fuente1: "Outfit", sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --fuente3: "Poiret One", sans-serif;
+}
+
+/* Detalles de Compra */
+.detalles-compra {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #cfcdc8; 
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: var(--fondo);
+    font-family: var(--fuente1);
+}
+
+.detalles-compra h2 {
+    font-family: var(--fuente3);
+    color: var(--especial1);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Tabla de Detalles */
+.detalles-compra table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.detalles-compra th,
+.detalles-compra td {
+    padding: 1rem;
+    text-align: left;
+    font-family: var(--fuente3);
+    font-size: 1rem;
+    border-bottom: 1px solid var(--especial2);
+}
+
+.detalles-compra td {
+    padding: 1rem;
+    text-align: left;
+    font-family: var(--fuente3);
+    font-size: 1rem;
+    border-bottom: none;
+}
+
+
+.detalles-compra th {
+    color: var(--fondo);
+    font-weight: bold;
+}
+
+.detalles-compra td {
+    background-color: #cfcdc8;
+    color: var(--encabezado);
+}
+
+.detalles-compra tr:last-child td {
+    border-bottom: 1px solid var(--especial2);
+}
+
+/* Botón */
+.detalles-compra .button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--especial1);
+    color: var(--fondo);
+    text-decoration: none;
+    font-family: var(--fuente1);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 auto;
+}
+
+.detalles-compra .button:hover {
+    background-color: var(--encabezado);
+    color: var(--titulo);
+    transform: scale(1.05);
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .detalles-compra {
+        padding: 1rem;
+    }
+
+    .detalles-compra h2 {
+        font-size: 2rem;
+    }
+
+    .detalles-compra th,
+    .detalles-compra td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .detalles-compra .button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
