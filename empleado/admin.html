@@ -214,48 +214,64 @@
                             <span aria-hidden="true" class="text-dark">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <form id="editConciertoForm text-dark">
-                            <input type="hidden" id="editConciertoId">
-                            <div class="form-group">
-                                <label for="editArtista" class="text-dark">Artista</label>
-                                <input type="text" class="form-control" id="editArtista" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="editDescripcion" class="text-dark">Descripción</label>
-                                <textarea class="form-control" id="editDescripcion" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="editFecha" class="text-dark">Fecha</label>
-                                <input type="date" class="form-control" id="editFecha" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="editLugar" class="text-dark">Lugar</label>
-                                <input type="text" class="form-control" id="editLugar" required>
-                            </div>
-                    <div class="form-group">
-                            <label class="text-dark">Localidades</label>
-                            <div class="mb-3">
-                                <label for="editPrecioPlatinum" class="text-dark">Precio Platinum</label>
-                                <input type="number" class="form-control" id="editPrecioPlatinum"
-                                    placeholder="Precio para Platinum" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="editPrecioGeneral" class="text-dark">Precio General</label>
-                                <input type="number" class="form-control" id="editPrecioGeneral"
-                                    placeholder="Precio para General" required>
-                            </div>
-                            <div>
-                                <label for="editPrecioVIP" class="text-dark">Precio VIP</label>
-                                <input type="number" class="form-control" id="editPrecioVIP"
-                                    placeholder="Precio para VIP" required>
+                    <div class="modal fade" id="editConciertoModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-dark" id="editModalLabel">Editar Concierto</h5>
+                                    <button type="button" class="close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="text-dark">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="editConciertoForm text-dark">
+                                        <input type="hidden" id="editConciertoId">
+                                        <div class="form-group">
+                                            <label for="editArtista" class="text-dark">Artista</label>
+                                            <input type="text" class="form-control" id="editArtista" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editDescripcion" class="text-dark">Descripción</label>
+                                            <textarea class="form-control" id="editDescripcion" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editFecha" class="text-dark">Fecha</label>
+                                            <input type="date" class="form-control" id="editFecha" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editLugar" class="text-dark">Lugar</label>
+                                            <input type="text" class="form-control" id="editLugar" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-dark">Localidades</label>
+                                            <div class="mb-3">
+                                                <label for="editPrecioPlatinum" class="text-dark">Precio Platinum</label>
+                                                <input type="number" class="form-control" id="editPrecioPlatinum"
+                                                    placeholder="Precio para Platinum" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="editPrecioGeneral" class="text-dark">Precio General</label>
+                                                <input type="number" class="form-control" id="editPrecioGeneral"
+                                                    placeholder="Precio para General" required>
+                                            </div>
+                                            <div>
+                                                <label for="editPrecioVIP" class="text-dark">Precio VIP</label>
+                                                <input type="number" class="form-control" id="editPrecioVIP"
+                                                    placeholder="Precio para VIP" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editUrlImagen" class="text-dark">URL de la Imagen</label>
+                                            <input type="url" class="form-control" id="editUrlImagen" required>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary" id="saveChangesBtn">Guardar Cambios</button>
+                                </div>
                             </div>
                         </div>
-                            <div class="form-group">
-                                <label for="editUrlImagen" class="text-dark">URL de la Imagen</label>
-                                <input type="url" class="form-control" id="editUrlImagen" required>
-                            </div>
-                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -277,11 +293,11 @@
 
 
         <script>
-            document.getElementById('logout').addEventListener('click', (e) => {
-                e.preventDefault();
-                sessionStorage.clear();
-                window.location.href = 'login.html';
-            });
+        document.getElementById('logout').addEventListener('click', (e) => {
+        e.preventDefault();
+        sessionStorage.clear();
+        window.location.href = 'login.html';
+        });
         </script>
     </body>
 

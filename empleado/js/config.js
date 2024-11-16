@@ -53,6 +53,17 @@ export const guardarConcierto = async (artistaform, descripcionform, fechaform, 
     }
 };
 
+export const getConcierto = async (idConcierto) => {
+    try {
+        const conciertoReferencia = doc(db, "conciertos", idConcierto);
+        const conciertoSnapshot = await getDoc(conciertoReferencia);
+        return conciertoSnapshot.data();
+    } catch (error) {
+        console.error("Error al obtener el concierto: ", error);
+        return null;
+    }
+}
+
 export const mostrarConciertos = async () => {
     try {
         const conciertos = await getDocs(collection(db, "conciertos")); //de aquí saco todos los documentos de mi coleccin conciertos
@@ -136,6 +147,33 @@ export async function registerUser(email, password, firstName, lastName, role) {
         console.log("Usuario registrado: ", user);
     } catch (e) {
         console.error("Error al registrar usuario: ", e);
+    }
+}
+
+export async function comprarBoletos(conciertoId, tipoBoleto, cantidadBoletos) {
+    const conciertoReference = doc(db, "conciertos", conciertoId);
+    const conciertoSnapshot = await getDoc(conciertoReference);
+
+    const concierto = conciertoSnapshot.data();
+    const localidades = concierto.localidades;
+
+    // find the ticket type
+    const ticketType = localidades.find((localidad) => localidad.tipoBoleto === tipoBoleto);
+
+    if (ticketType.disponibles >= cantidadBoletos) {
+        ticketType.disponibles -= cantidadBoletos;
+
+        // update the concert with the new ticket availability
+        await updateDoc(conciertoReference, {
+            localidades: [
+                ticketType,
+                ...localidades.filter((localidad) => localidad.tipoBoleto !== tipoBoleto)
+            ]
+        });
+
+        alert("Boletos comprados correctamente");
+    } else {
+        alert("No hay suficientes boletos disponibles");
     }
 }
 
