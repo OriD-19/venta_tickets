@@ -196,7 +196,7 @@ export async function loginUser(email, password) {
         }
 
     } catch (e) {
-        console.error("Error al loguear usuario: ", e);
+        throw new Error("Error al iniciar sesión: " + e);
     }
 }
 
